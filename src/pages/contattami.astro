@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+---
+
+<Layout>
+  <main class="flex flex-col gap-10 py-10 px-4 max-w-3xl mx-auto">
+
+    <!-- Sezione Intro con WhatsApp -->
+    <section class="text-center">
+      <p class="mb-4 text-lg text-gray-700">
+        Sei pronto a trasformare la tua vita? Prenota una prova gratuita di <strong>Ashtanga Yoga a Cagliari o Dolianova</strong> e scopri come la pratica possa rinnovare corpo e mente.
+      </p>
+      <a 
+        href="https://wa.me/3408961251?text=Ciao,%20vorrei%20prenotare%20una%20prova%20gratuita%20di%20Ashtanga%20Yoga%20a%20Cagliari" 
+        target="_blank"
+        class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full transition"
+      >
+        Scrivimi su WhatsApp
+      </a>
+    </section>
+
+    <!-- Sezione Form -->
+    <section class="bg-white p-8 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold text-center mb-6 text-emerald-700">Oppure contattami tramite email</h2>
+
+      <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-4">
+        <!-- Hidden Access Key -->
+        <input type="hidden" name="access_key" value="0d127d0a-a7d0-40ed-96ab-80c3e9ddba9f">
+
+        <!-- Campi -->
+        <input 
+          type="text" 
+          name="name" 
+          required 
+          placeholder="Il tuo nome..." 
+          class="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        >
+        <input 
+          type="email" 
+          name="email" 
+          required 
+          placeholder="La tua email..." 
+          class="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        >
+        <textarea 
+          name="message" 
+          required 
+          placeholder="Il tuo messaggio..." 
+          class="border border-gray-300 rounded-lg px-4 py-3 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-400"
+        ></textarea>
+
+        <!-- Checkbox termini e condizioni -->
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <input type="checkbox" id="terms" name="terms" required class="h-4 w-4 text-emerald-600">
+          <label for="terms">Accetto i <a href="#" id="openModal" class="text-emerald-700 underline">termini e condizioni</a></label>
+        </div>
+
+        <!-- Pulsante invio -->
+        <button 
+          type="submit" 
+          class="mt-4 bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-6 py-3 rounded-full transition"
+        >
+          Invia la tua richiesta
+        </button>
+      </form>
+    </section>
+
+    <!-- Modale Termini -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+      <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative text-gray-800">
+        <h3 class="text-xl font-bold mb-4 text-emerald-700">Termini e Condizioni</h3>
+        <p class="text-sm mb-4">
+          Utilizzeremo i dati che ci fornirai (nome, email, messaggio) <strong>esclusivamente per rispondere alla tua richiesta</strong>.<br><br>
+          <strong>Non archivieremo, non condivideremo</strong> e <strong>non utilizzeremo</strong> i tuoi dati per fini commerciali o promozionali.<br><br>
+          Una volta ricevuta e gestita la richiesta, i dati non verranno conservati.<br><br>
+          Puoi contattarci in qualsiasi momento per richiedere informazioni sulla gestione dei tuoi dati.
+        </p>
+        <button id="closeModal" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
+          Chiudi
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("modal");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn = document.getElementById("closeModal");
+    
+        if (modal && openBtn && closeBtn) {
+          openBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+          });
+    
+          closeBtn.addEventListener("click", () => {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+          });
+    
+          modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+              modal.classList.add("hidden");
+              modal.classList.remove("flex");
+            }
+          });
+        }
+      });
+    </script>
+    
+
+  </main>
+</Layout>

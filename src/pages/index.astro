@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import stylesheet from '../styles/global.css';
+import "../styles/global.css";
+
+---
+<Layout>
+  <main class="flex flex-col h-auto overflow-y-auto scroll-smooth snap-y snap-mandatory md:snap-none">
+
+    <!-- Sezione 1: Hero -->
+    <section class="snap-start relative h-[40vh] md:h-[40vh] flex items-center justify-center pt-16 md:pt-0">
+      <img src="/yoga-hero.jpg" alt="Hero yoga" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+      <div class="relative z-10 text-white text-center px-4">
+        <h1 class="text-2xl md:text-4xl font-bold mb-4">
+          “Lo yoga è l’arte di conoscere se stessi attraverso se stessi.” – K. P. Jois
+        </h1>
+        <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
+          Contattami
+        </a>
+      </div>
+    </section>
+
+    <!-- Sezione 1.5: Cos'è l'Ashtanga Vinyasa Yoga -->
+<section class="snap-start h-auto md:h-full flex flex-col items-center justify-center bg-indigo-50 text-indigo-900 px-4 py-12">
+  <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Cos'è l'Ashtanga Vinyasa Yoga?</h2>
+  
+  <div class="max-w-4xl text-center space-y-6 text-lg leading-relaxed">
+    <p>
+      L'Ashtanga è una pratica dinamica di Yoga dove le posture (asana) si legano in una sequenza precisa, come una ghirlanda di fiori. 
+      Il respiro e il movimento sono perfettamente sincronizzati, creando una danza fluida e meditativa.
+    </p>
+    <p>
+      <strong>Stile Mysore:</strong> Questo termine deriva dal nome della città di Mysore, nel Sud dell’India, dove viene praticato questo stile di Yoga. 
+      Il Mysore è un approccio in cui ogni allievo, all’interno di una classe, può srotolare il suo tappetino ed eseguire la sequenza di Ashtanga 
+      senza essere guidato, seguendo i propri tempi. 
+    </p>
+    <p>
+      L’insegnante ha il compito di osservare, correggere e, quando lo studente è pronto, introdurre nuovi asana per avanzare nella serie. 
+      Si è in una classe, ma è come se la lezione fosse individuale: una pratica profonda, personalizzata e rispettosa dei tempi di ciascuno.
+    </p>
+    <a href="/chisono" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
+      Su di me
+    </a>
+  </div>
+</section>
+
+    
+
+          <!-- Sezione 3: Benefici -->
+      <section class="snap-start h-auto md:h-full flex flex-col items-center justify-center bg-emerald-50 text-emerald-900 px-4 py-10">
+        <h2 class="text-2xl font-bold mb-8 text-center">Benefici</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+          
+          <!-- Card 1 -->
+          <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
+            <iconify-icon icon="mdi:meditation" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
+            <h3 class="text-lg font-bold mb-2">Maggiore Flessibilità</h3>
+            
+            <p class="text-sm mb-2">
+              L'Ashtanga Yoga aumenta la flessibilità attraverso sequenze dinamiche che allungano e rafforzano i muscoli in modo coordinato con il respiro.            </p>
+          
+            <div class="extra-text hidden text-sm mb-2">
+              La pratica regolare scioglie gradualmente le tensioni e migliora la mobilità articolare, portando a una maggiore elasticità del corpo.            </div>
+          
+            <button class="toggle-more text-emerald-700 font-semibold text-sm hover:underline">
+              Leggi di più
+            </button>
+          
+            <div class="prenota-button hidden mt-4">
+              <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
+                Scrivimi
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
+            <iconify-icon icon="mdi:flower" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
+            <h3 class="text-lg font-bold mb-2">Riduzione dello Stress</h3>
+
+            <p class="text-sm mb-2">
+              L'Ashtanga Yoga calma la mente attraverso la sincronizzazione di respiro e movimento, allontanando lo stress.             </p>
+
+            <div class="extra-text hidden text-sm mb-2">
+              La pratica costante e impegnativa delle sequenze allena la concentrazione e la presenza mentale, migliorando l'attenzione e la presenza nella quotidianità            </div>
+
+            <button class="toggle-more text-emerald-700 font-semibold text-sm hover:underline">
+              Leggi di più
+            </button>
+
+            <div class="prenota-button hidden mt-4">
+              <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
+                Scrivimi
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
+            <iconify-icon icon="mdi:arm-flex-outline" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
+            <h3 class="text-lg font-bold mb-2">Forza e Consapevolezza</h3>
+
+            <p class="text-sm mb-2">
+              L'Ashtanga Yoga rafforza il corpo attraverso posture che impegnano profondamente i muscoli, sostenendo il peso del corpo e richiedendo stabilità.             </p>
+
+            <div class="extra-text hidden text-sm mb-2">
+              Le transizioni fluide tra le posizioni sviluppano forza funzionale, resistenza e un controllo muscolare consapevole in tutto il corpo.            </div>
+
+            <button class="toggle-more text-emerald-700 font-semibold text-sm hover:underline">
+              Leggi di più
+            </button>
+
+            <div class="prenota-button hidden mt-4">
+              <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
+              Scrivimi      
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+   
+   <!-- Sezione 4: Orari -->
+   <section class="snap-start h-[40vh] md:h-full flex flex-col items-center justify-center bg-indigo-50 text-indigo-900 px-4">
+    <div class="text-center">
+      <h2 class="text-2xl font-bold mb-6">Dove mi trovi:</h2>
+  
+      <div class="flex flex-col items-center gap-4 text-lg">
+        <div class="flex items-center gap-2">
+          <iconify-icon icon="mdi:map-marker" width="24" height="24" class="text-emerald-500"></iconify-icon>
+          Dolianova - WolfGym
+        </div>
+        <div class="flex items-center gap-2">
+          <iconify-icon icon="mdi:map-marker" width="24" height="24" class="text-emerald-500"></iconify-icon>
+          Cagliari - Kindness Roots
+        </div>
+      </div>
+  
+      <!-- Bottone per vedere orari completi -->
+      <a 
+        href="/orarielezioni" 
+        class="inline-block mt-6 bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-6 py-3 rounded-full transition"
+      >
+        Vedi orari e lezioni complete
+      </a>
+    </div>
+  </section>
+
+
+<!-- Sezione 2: Galleria -->
+<section class="snap-start h-auto md:h-full bg-gradient-to-b from-white to-indigo-50 text-indigo-900 flex flex-col px-4 py-12 justify-start">
+  <h2 class="text-3xl font-bold text-center mb-8">Galleria</h2>
+
+  <div class="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl border border-indigo-100 bg-white h-[400px] md:h-[500px]">
+    <div 
+      id="gallery-slider" 
+      class="flex transition-transform duration-500 ease-in-out h-full"
+      style="transform: translateX(0%)"
+    >
+      <img src="/gallery1.jpg" alt="Foto 1" class="w-full object-cover flex-shrink-0 h-full" />
+      <img src="/gallery2.jpg" alt="Foto 2" class="w-full object-cover flex-shrink-0 h-full" />
+      <img src="/gallery3.jpg" alt="Foto 3" class="w-full object-cover flex-shrink-0 h-full" />
+      <img src="/gallery4.jpg" alt="Foto 4" class="w-full object-cover flex-shrink-0 h-full" />
+    </div>
+
+    <!-- Frecce slider -->
+    <button 
+      id="prev" 
+      class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white hover:bg-yellow-300 text-indigo-900 p-3 rounded-full shadow-md transition"
+      aria-label="Foto precedente"
+    >
+      <iconify-icon icon="mdi:chevron-left" width="32" height="32"></iconify-icon>
+    </button>
+
+    <button 
+      id="next" 
+      class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white hover:bg-yellow-300 text-indigo-900 p-3 rounded-full shadow-md transition"
+      aria-label="Foto successiva"
+    >
+      <iconify-icon icon="mdi:chevron-right" width="32" height="32"></iconify-icon>
+    </button>
+  </div>
+</section>
+
+
+
+
+    <!-- Script slider -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slider = document.getElementById("gallery-slider");
+        const prevBtn = document.getElementById("prev");
+        const nextBtn = document.getElementById("next");
+
+        if (slider && prevBtn && nextBtn) {
+          const slides = slider.children;
+          let index = 0;
+
+          const updateSlider = () => {
+            const offset = index * -100;
+            slider.style.transform = `translateX(${offset}%)`;
+          };
+
+          nextBtn.addEventListener("click", () => {
+            if (index < slides.length - 1) {
+              index++;
+              updateSlider();
+            }
+          });
+
+          prevBtn.addEventListener("click", () => {
+            if (index > 0) {
+              index--;
+              updateSlider();
+            }
+          });
+        }
+      });
+    </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const toggles = document.querySelectorAll('.toggle-more');
+      
+          toggles.forEach((toggle) => {
+            toggle.addEventListener('click', (e) => {
+              const button = e.currentTarget;
+              if (!(button instanceof HTMLElement)) return;
+      
+              const card = button.closest('.card');
+              const extraText = card?.querySelector('.extra-text');
+              const prenotaButton = card?.querySelector('.prenota-button');
+      
+              if (extraText instanceof HTMLElement && prenotaButton instanceof HTMLElement) {
+                extraText.classList.toggle('hidden');
+                prenotaButton.classList.toggle('hidden');
+      
+                // Cambia testo "Leggi di più" / "Nascondi"
+                if (extraText.classList.contains('hidden')) {
+                  button.textContent = 'Leggi di più';
+                } else {
+                  button.textContent = 'Nascondi';
+                }
+              }
+            });
+          });
+        });
+      </script>
+      
+        
+
+
+  </main>
+</Layout>
