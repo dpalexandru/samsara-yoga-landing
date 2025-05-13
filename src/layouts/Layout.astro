@@ -1,0 +1,140 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="it">
+  <head>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <!-- Meta Title -->
+<title>Insegnante Yoga Ashtanga a Cagliari - Lezioni per Tutti i Livelli</title>
+
+<!-- Meta Description -->
+<meta name="description" content="Scopri le lezioni di Yoga Ashtanga a Cagliari con un'insegnante qualificata. Corsi per principianti e avanzati, benessere fisico e mentale. Prenota la tua lezione oggi!">
+
+<!-- Open Graph per condivisione social -->
+<meta property="og:title" content="Insegnante Yoga Ashtanga a Cagliari - Lezioni Personalizzate">
+<meta property="og:description" content="Ritrova l’equilibrio con lezioni di Yoga Ashtanga a Cagliari. Corsi per principianti e avanzati. Prenota ora la tua sessione!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tuosito.com/"> <!-- Sostituisci con il tuo URL -->
+<meta property="og:image" content="https://www.tuosito.com/images/yoga-ashtanga.jpg"> <!-- Sostituisci con un'immagine reale -->
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yoga Ashtanga a Cagliari - Corsi per il Tuo Benessere">
+<meta name="twitter:description" content="Lezioni di Yoga Ashtanga a Cagliari per migliorare forza, equilibrio e serenità. Scopri i nostri corsi adatti a ogni livello!">
+<link rel="icon" type="image/jpeg" href="/logo.png" />
+<link rel="apple-touch-icon" href="/logo.png" />
+
+  </head>
+  <body>
+    <Navbar />
+    <main class="pt-10">
+      <slot />
+    </main>
+            <!-- WhatsApp Floating Button -->
+        <div class="fixed bottom-6 right-6 z-50">
+          <button
+            id="contact-toggle"
+            class="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg flex items-center justify-center"
+            aria-label="Contatta Francesca"
+          >
+            <iconify-icon icon="mdi:whatsapp" width="45" height="45"></iconify-icon>
+          </button>
+
+          <!-- Menu nascosto -->
+          <div
+                  id="contact-menu"
+                  class="hidden mt-2 w-64 bg-white rounded-lg shadow-xl text-lg text-gray-800 overflow-hidden transition-all duration-300"
+          >
+                
+            <a
+              href="https://wa.me/3408961251"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center px-4 py-3 hover:bg-gray-100"
+            >
+              <iconify-icon icon="mdi:whatsapp" class="text-green-500 mr-2" width="20"></iconify-icon>
+              Invia messaggio WhatsApp
+            </a>
+            <a
+              href="https://m.me/16JfVKuakV/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center px-4 py-3 hover:bg-gray-100"
+            >
+              <iconify-icon icon="mdi:facebook-messenger" class="text-blue-500 mr-2" width="20"></iconify-icon>
+              Scrivi su Messenger
+            </a>
+          </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("contact-toggle");
+    const menu = document.getElementById("contact-menu");
+
+    if (toggleBtn && menu) {
+      toggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        const target = e.target as Node;
+        if (!menu.contains(target) && target !== toggleBtn) {
+          menu.classList.add("hidden");
+        }
+      });
+
+      menu.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    }
+  });
+</script>
+
+<Footer />
+<!-- Cookie Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white shadow-md p-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-800 z-50">
+  <p class="text-center md:text-left">
+    Questo sito utilizza cookie tecnici e di terze parti (es. Google Analytics) per analizzare il traffico. 
+    Continuando la navigazione accetti il loro utilizzo. 
+    <a href="/privacy" class="underline text-emerald-700 hover:text-emerald-900">Scopri di più</a>.
+  </p>
+  <button 
+    id="accept-cookies"
+    class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition"
+  >
+    Accetto
+  </button>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+
+    if (banner && acceptBtn) {
+      // Se già accettati, nascondi il banner
+      if (localStorage.getItem("cookieAccepted") === "true") {
+        banner.style.display = "none";
+      }
+
+      // Quando si clicca "Accetto"
+      acceptBtn.addEventListener("click", () => {
+        localStorage.setItem("cookieAccepted", "true");
+        banner.style.display = "none";
+      });
+    }
+  });
+</script>
+
+
+  </body>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+</html>
+
