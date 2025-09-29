@@ -10,43 +10,50 @@ import "../styles/global.css";
     <!-- Sezione 1: Hero -->
     <section class="snap-start relative h-[40vh] md:h-[40vh] flex items-center justify-center pt-16 md:pt-0">
       <img src="/yoga-hero.jpg" alt="Hero yoga" class="absolute inset-0 w-full h-full object-cover brightness-75" />
-      <div class="relative z-10 text-white text-center px-4">
-        <h1 class="text-2xl md:text-4xl font-bold mb-4">
-          “Lo yoga è l’arte di conoscere se stessi attraverso se stessi.” – K. P. Jois
+    
+      <div class="relative z-10 text-center px-6 max-w-3xl">
+        <h1 class="hero-quote text-2xl md:text-4xl">
+          “Lo yoga è l’arte di conoscere se stessi attraverso se stessi.”
+          <span>– K. P. Jois</span>
         </h1>
-        <a href="/contattami" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2 rounded-full shadow-md transition duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    
+        <a href="/contattami" class="cta-btn">
+          <!-- icona busta -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V6a2 2 0 00-2-2H3a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
           Prenota una prova gratuita
         </a>
-        
       </div>
     </section>
 
-    <!-- Sezione 1.5: Cos'è l'Ashtanga Vinyasa Yoga -->
-<section class="snap-start h-auto md:h-full flex flex-col items-center justify-center bg-indigo-50 text-indigo-900 px-4 py-12">
-  <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Cos'è l'Ashtanga Vinyasa Yoga?</h2>
-  
-  <div class="max-w-4xl text-center space-y-6 text-lg leading-relaxed">
-    <p>
-      L'Ashtanga è una pratica dinamica di Yoga dove le posture (asana) si legano in una sequenza precisa, come una ghirlanda di fiori. 
-      Il respiro e il movimento sono perfettamente sincronizzati, creando una danza fluida e meditativa.
-    </p>
-    <p>
-      <strong>Stile Mysore:</strong> Questo termine deriva dal nome della città di Mysore, nel Sud dell’India, dove viene praticato questo stile di Yoga. 
-      Il Mysore è un approccio in cui ogni allievo, all’interno di una classe, può srotolare il suo tappetino ed eseguire la sequenza di Ashtanga 
-      senza essere guidato, seguendo i propri tempi. 
-    </p>
-    <p>
-      L’insegnante ha il compito di osservare, correggere e, quando lo studente è pronto, introdurre nuovi asana per avanzare nella serie. 
-      Si è in una classe, ma è come se la lezione fosse individuale: una pratica profonda, personalizzata e rispettosa dei tempi di ciascuno.
-    </p>
-    <a href="/chisono" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
-      Su di me
-    </a>
+<!-- Sezione 1.5: Cos'è l'Ashtanga Vinyasa Yoga -->
+<section class="lotus-section snap-start h-auto md:h-full flex flex-col items-center justify-center text-indigo-900 px-4 py-12">
+  <div class="lotus-content max-w-4xl text-center">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Cos'è l'Ashtanga Vinyasa Yoga?</h2>
+
+    <div class="space-y-6 text-lg leading-relaxed">
+      <p>
+        L'Ashtanga è una pratica dinamica di Yoga dove le posture (asana) si legano in una sequenza precisa, come una ghirlanda di fiori.
+        Il respiro e il movimento sono perfettamente sincronizzati, creando una danza fluida e meditativa.
+      </p>
+      <p>
+        <strong>Stile Mysore:</strong> Questo termine deriva dal nome della città di Mysore, nel Sud dell’India, dove viene praticato questo stile di Yoga.
+        Il Mysore è un approccio in cui ogni allievo, all’interno di una classe, può srotolare il suo tappetino ed eseguire la sequenza di Ashtanga
+        senza essere guidato, seguendo i propri tempi.
+      </p>
+      <p>
+        L’insegnante ha il compito di osservare, correggere e, quando lo studente è pronto, introdurre nuovi asana per avanzare nella serie.
+        Si è in una classe, ma è come se la lezione fosse individuale: una pratica profonda, personalizzata e rispettosa dei tempi di ciascuno.
+      </p>
+      <a href="/chisono" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
+        Su di me
+      </a>
+    </div>
   </div>
 </section>
+
 
     
 
@@ -127,19 +134,23 @@ import "../styles/global.css";
 
    
    <!-- Sezione 4: Orari -->
-   <section class="snap-start h-[40vh] md:h-full flex flex-col items-center justify-center bg-indigo-50 text-indigo-900 px-4">
+   <section class="snap-start h-[45vh] md:h-full flex flex-col items-center justify-center bg-indigo-50 text-indigo-900 px-4">
     <div class="text-center">
       <h2 class="text-2xl font-bold mb-6">Dove mi trovi:</h2>
   
       <div class="flex flex-col items-center gap-4 text-lg">
         <div class="flex items-center gap-2">
           <iconify-icon icon="mdi:map-marker" width="24" height="24" class="text-emerald-500"></iconify-icon>
-          Dolianova - WolfGym
+          Cagliari - Tres Tiempos
         </div>
+        <span>Via delle Cicale, 1, 09134 Cagliari CA</span>
         <div class="flex items-center gap-2">
           <iconify-icon icon="mdi:map-marker" width="24" height="24" class="text-emerald-500"></iconify-icon>
-          Cagliari - Kindness Roots
+          Dolianova - WolfGym
         </div>
+        <span>Corso Repubblica, 272, 09041 Dolianova CA</span>
+
+     
       </div>
   
       <!-- Bottone per vedere orari completi -->
@@ -187,6 +198,95 @@ import "../styles/global.css";
     </button>
   </div>
 </section>
+
+<section id="faq" class="mt-12">
+  <h2 class="text-2xl md:text-3xl font-bold text-emerald-800 text-center mb-6">
+    Domande frequenti – Ashtanga Yoga Cagliari
+  </h2>
+
+  <div class="max-w-3xl mx-auto space-y-3">
+    <!-- FAQ 1 -->
+    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
+      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+        Dove posso praticare Ashtanga Yoga a Cagliari?
+        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
+      </summary>
+      <div class="mt-2 text-gray-700">
+        Pratichiamo a <strong>Cagliari (Tres Tiempos)</strong> e a <strong>Dolianova (WolfGym)</strong>. 
+        Contattami per info su disponibilità e calendario aggiornato.
+      </div>
+    </details>
+
+    <!-- FAQ 2 -->
+    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
+      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+        L’Ashtanga Yoga è adatto ai principianti?
+        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
+      </summary>
+      <div class="mt-2 text-gray-700">
+        Sì. Lo <strong>stile Mysore</strong> permette a ciascuno di procedere al proprio ritmo con assistenza individuale. 
+        Le lezioni guidate sono utili per imparare la sequenza e la respirazione.
+      </div>
+    </details>
+
+    <!-- FAQ 3 -->
+    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
+      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+        Come prenoto una prova gratuita di Ashtanga Yoga a Cagliari?
+        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
+      </summary>
+      <div class="mt-2 text-gray-700">
+        Clicca su <a href="/contattami" class="text-emerald-700 underline font-semibold">Contattami</a> 
+        e scrivimi: ti risponderò con tutte le informazioni per la prova.
+      </div>
+    </details>
+
+    <!-- FAQ 4 -->
+    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
+      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+        Cosa porto alla lezione?
+        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
+      </summary>
+      <div class="mt-2 text-gray-700">
+        Tappetino e asciugamano. Abbigliamento comodo. Se non hai il tappetino, chiedi in anticipo la disponibilità.
+      </div>
+    </details>
+
+    
+
+    <!-- FAQ 6 -->
+    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
+      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+        Ci sono controindicazioni?
+        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
+      </summary>
+      <div class="mt-2 text-gray-700">
+        In caso di infortuni, condizioni mediche o gravidanza, parla con il tuo medico e informami prima della lezione
+        per adattare la pratica in sicurezza.
+      </div>
+    </details>
+
+    <!-- FAQ 7 -->
+    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
+      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+        Qual è la differenza tra Mysore e lezione guidata?
+        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
+      </summary>
+      <div class="mt-2 text-gray-700">
+        Nella <strong>Mysore</strong> pratichi autonomamente la sequenza con assistenza individuale; 
+        nella <strong>lezione guidata</strong> l’insegnante conduce il gruppo passo dopo passo.
+      </div>
+    </details>
+  </div>
+
+  <!-- CTA finale -->
+  <div class="text-center mt-8">
+    <a href="/contattami" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-full shadow-sm transition">
+      Prenota la tua prova gratuita
+    </a>
+  </div>
+</section>
+
 
 
 
@@ -251,6 +351,168 @@ import "../styles/global.css";
           });
         });
       </script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://YOUR_DOMAIN/ashtanga-yoga-cagliari",
+        "url": "https://YOUR_DOMAIN/ashtanga-yoga-cagliari",
+        "name": "Ashtanga Yoga Cagliari – Lezioni Mysore e guidate",
+        "inLanguage": "it-IT",
+        "description": "Ashtanga Yoga Cagliari: pratica Mysore e lezioni guidate per tutti i livelli. Prova gratuita, aperto a tutti. Contattami per prenotare.",
+        "keywords": "ashtanga yoga cagliari, ashtanga cagliari, mysore cagliari, yoga cagliari, yoga dolianova, prova gratuita ashtanga",
+        "about": [
+          { "@type": "Thing", "name": "Ashtanga Yoga" },
+          { "@type": "Thing", "name": "Mysore Style" },
+          { "@type": "Place", "name": "Cagliari" }
+        ],
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://YOUR_DOMAIN/yoga-hero.jpg"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://YOUR_DOMAIN/" },
+            { "@type": "ListItem", "position": 2, "name": "Ashtanga Yoga Cagliari", "item": "https://YOUR_DOMAIN/ashtanga-yoga-cagliari" }
+          ]
+        },
+        "potentialAction": {
+          "@type": "ContactAction",
+          "target": "https://YOUR_DOMAIN/contattami",
+          "name": "Prenota una prova gratuita"
+        },
+        "hasPart": [
+          { "@type": "CreativeWork", "name": "Cos'è l'Ashtanga Vinyasa Yoga" },
+          { "@type": "CreativeWork", "name": "Benefici dell'Ashtanga Yoga" },
+          { "@type": "CreativeWork", "name": "Dove mi trovi" },
+          { "@type": "ImageGallery", "name": "Galleria",
+            "associatedMedia": [
+              { "@type": "ImageObject", "url": "https://YOUR_DOMAIN/gallery1.jpg" },
+              { "@type": "ImageObject", "url": "https://YOUR_DOMAIN/gallery2.jpg" },
+              { "@type": "ImageObject", "url": "https://YOUR_DOMAIN/gallery3.jpg" },
+              { "@type": "ImageObject", "url": "https://YOUR_DOMAIN/gallery4.jpg" }
+            ]
+          }
+        ]
+      },
+  
+      {
+        "@type": "Service",
+        "@id": "https://YOUR_DOMAIN/#ashtanga-service",
+        "name": "Ashtanga Yoga Cagliari – Prova gratuita",
+        "serviceType": "Ashtanga Yoga in Cagliari (Mysore e guidate)",
+        "url": "https://YOUR_DOMAIN/ashtanga-yoga-cagliari",
+        "description": "Lezioni di Ashtanga Yoga a Cagliari e Dolianova per tutti i livelli, con possibilità di prova gratuita.",
+        "keywords": "ashtanga yoga cagliari, mysore cagliari, yoga per tutti i livelli",
+        "areaServed": [
+          { "@type": "Place", "name": "Cagliari" },
+          { "@type": "Place", "name": "Dolianova" }
+        ],
+        "audience": { "@type": "Audience", "audienceType": "Tutti i livelli" },
+        "offers": {
+          "@type": "Offer",
+          "category": "free-trial",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "https://YOUR_DOMAIN/contattami",
+          "description": "Prova gratuita. Aperto a tutti."
+        },
+        "provider": {
+          "@type": "Person",
+          "name": "Francesca",
+          "jobTitle": "Insegnante di Ashtanga Yoga",
+          "areaServed": "Cagliari e Dolianova"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Sedi di pratica",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Place",
+                "name": "Dolianova - WolfGym",
+                "image": "https://YOUR_DOMAIN/dolianova.jpg",
+                "hasMap": "https://maps.app.goo.gl/FhP8UmPCy7CjDnU77"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Place",
+                "name": "Cagliari - Tres Tiempos",
+                "image": "https://YOUR_DOMAIN/trestiempos_cagliari.jpeg",
+                "hasMap": "https://maps.app.goo.gl/HYFNzETn31Gtde359"
+              }
+            }
+          ]
+        },
+        "mainEntityOfPage": "https://YOUR_DOMAIN/ashtanga-yoga-cagliari"
+      },
+  
+      {
+        "@type": "ItemList",
+        "name": "Benefici dell'Ashtanga Yoga",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Maggiore flessibilità" },
+          { "@type": "ListItem", "position": 2, "name": "Riduzione dello stress" },
+          { "@type": "ListItem", "position": 3, "name": "Forza e consapevolezza" }
+        ]
+      },
+  
+      {
+        "@type": "FAQPage",
+        "@id": "https://YOUR_DOMAIN/ashtanga-yoga-cagliari#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Dove posso praticare Ashtanga Yoga a Cagliari?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La pratica è disponibile a Cagliari (Tres Tiempos) e a Dolianova (WolfGym). Consulta la pagina Ashtanga Yoga Cagliari o contattami per dettagli e disponibilità."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'Ashtanga Yoga è adatto ai principianti?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sì. Le lezioni sono aperte a tutti i livelli: lo stile Mysore permette a ciascuno di procedere secondo i propri tempi, con assistenza individuale dell'insegnante."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Come prenoto una prova gratuita di Ashtanga Yoga a Cagliari?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Per prenotare la prova gratuita clicca su 'Prenota una prova' o visita la pagina Contattami e invia una richiesta: riceverai una risposta rapida con tutte le informazioni."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quali sono i benefici principali dell'Ashtanga Yoga?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Migliora flessibilità, forza e concentrazione; riduce lo stress grazie alla sincronizzazione di respiro e movimento e a una pratica costante e progressiva."
+            }
+          }
+        ]
+      },
+  
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://YOUR_DOMAIN/contattami",
+        "availableLanguage": ["it", "en"]
+      }
+    ]
+  }
+  </script>
+  
       
         
 

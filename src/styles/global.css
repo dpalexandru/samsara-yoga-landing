@@ -1,11 +1,154 @@
 @import "tailwindcss";
-
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
 .no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    display: none;
 }
 
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.title-yoga {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    /* circa equivalente a text-3xl */
+    font-weight: 600;
+    /* bold */
+    color: #047857;
+    /* emerald-700 */
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.title-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    /* ≈ text-2xl */
+    font-weight: 600;
+    font-style: italic;
+    color: #ffffff;
+    letter-spacing: 0.9px;
+    /* più leggibile */
+}
+
+
+/* Hero Quote */
+
+.hero-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.5;
+    /* sfondo semitrasparente */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+
+/* Firma dell’autore */
+
+.hero-quote span {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.125rem;
+    /* ≈ text-lg */
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+/* CTA button */
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #059669;
+    /* emerald-600 */
+    color: #fff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #047857;
+    /* emerald-700 */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* S C R I T T A  I N I Z I A LE */
+
+
+/* Sezione informativa Ashtanga con pattern verde leggero + lotus + mandala + breath waves */
+
+.lotus-section {
+    position: relative;
+    /* pattern leggero in verde + gradient soft */
+    background: repeating-linear-gradient( 135deg, rgba(16, 185, 129, 0.06) 0 1px, transparent 1px 14px), linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 100%);
+    overflow: hidden;
+}
+
+
+/* grande fiore di loto in alto a destra */
+
+.lotus-section::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -90px;
+    width: 380px;
+    height: 380px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.12;
+    /* delicatezza */
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%230f766e' stroke-width='2'>\
+    <path d='M100 24 C85 60 88 96 100 124 C112 96 115 60 100 24 Z'/>\
+    <path d='M60 60 C50 90 60 110 100 130 C140 110 150 90 140 60 C120 68 80 68 60 60 Z'/>\
+    <path d='M32 92 C40 120 72 138 100 140 C128 138 160 120 168 92 C144 106 120 110 100 110 C80 110 56 106 32 92 Z'/>\
+  </svg>");
+}
+
+
+/* piccolo fiore riflesso in basso a sinistra */
+
+.lotus-section::after {
+    content: "";
+    position: absolute;
+    bottom: -70px;
+    left: -70px;
+    width: 260px;
+    height: 260px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.10;
+    pointer-events: none;
+    transform: scaleX(-1);
+    /* riflesso */
+    background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%230f766e' stroke-width='2'>\
+    <path d='M100 24 C85 60 88 96 100 124 C112 96 115 60 100 24 Z'/>\
+    <path d='M60 60 C50 90 60 110 100 130 C140 110 150 90 140 60 C120 68 80 68 60 60 Z'/>\
+    <path d='M32 92 C40 120 72 138 100 140 C128 138 160 120 168 92 C144 106 120 110 100 110 C80 110 56 106 32 92 Z'/>\
+  </svg>");
+}
+
+
+/* contenuto sopra gli sfondi */
+
+.lotus-section .lotus-content {
+    position: relative;
+    z-index: 1;
+}

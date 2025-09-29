@@ -9,9 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.4.0",
     "@tailwindcss/vite": "^4.1.4",
-    "astro": "^5.10.1",
+    "astro": "^5.14.1",
     "tailwindcss": "^4.1.4"
+  },
+  "devDependencies": {
+    "@astrojs/netlify": "^6.5.11",
+    "@netlify/edge-functions": "^2.18.1",
+    "netlify-cli": "^23.8.1"
   }
 }
