@@ -1,0 +1,11 @@
+[build]
+  command = "astro build"
+  publish = "dist"
+
+[dev]
+  command = "astro dev"
+  framework = "#custom"
+  port = 4321
+  targetPort = 4321
+  # Disattiva Edge Functions in dev
+  edge_functions = false

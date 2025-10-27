@@ -30,12 +30,12 @@
 
 .title-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     /* ≈ text-2xl */
     font-weight: 600;
     font-style: italic;
     color: #ffffff;
-    letter-spacing: 0.9px;
+    letter-spacing: 1.9px;
     /* più leggibile */
 }
 
@@ -99,7 +99,7 @@
 .lotus-section {
     position: relative;
     /* pattern leggero in verde + gradient soft */
-    background: repeating-linear-gradient( 135deg, rgba(16, 185, 129, 0.06) 0 1px, transparent 1px 14px), linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 100%);
+    background: repeating-linear-gradient(135deg, rgba(16, 185, 129, 0.06) 0 1px, transparent 1px 14px), linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 100%);
     overflow: hidden;
 }
 
