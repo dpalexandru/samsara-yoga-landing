@@ -11,76 +11,188 @@ const links = [
 import stylsheet from '../styles/global.css';
 ---
 
-<nav class="bg-indigo-900 shadow-md fixed top-0 w-full z-50">
+<nav id="site-nav" class="bg-indigo-900 shadow-md fixed top-0 w-full z-50" data-open="false">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16 items-center">
       <!-- Logo + Titolo -->
-      <a href="/" class="flex items-center space-x-2">
+      <a href="/" class="flex items-center gap-2">
         <img src="/logo.png" alt="Logo La Ruota Del Samsara" class="h-10 w-10 md:h-12 md:w-12 object-contain" />
-        <span class="title-logo">LaRuotaDelSamsara</span>
+        <span class="title-logo text-white">LaRuotaDelSamsara</span>
       </a>
 
       <!-- Menu desktop -->
-      <div class="hidden md:flex space-x-6">
-        {links.map(link => (
+      <div class="hidden md:flex items-center gap-6">
+        {links.map((link) => (
           <a
             href={link.href}
-            class="text-white hover:text-yellow-300 transition flex items-center space-x-2"
+            class="text-white hover:text-yellow-300 transition flex items-center gap-2"
             target={link.external ? '_blank' : '_self'}
-            rel={link.external ? 'noopener noreferrer' : ''}
+            rel={link.external ? 'noopener noreferrer' : undefined}
           >
-            {link.icon && (
-              <iconify-icon icon={link.icon} width="20" class="text-yellow-300"></iconify-icon>
-            )}
+            {link.icon && (<iconify-icon icon={link.icon} width="20" class="text-yellow-300"></iconify-icon>)}
             <span>{link.name}</span>
           </a>
         ))}
       </div>
 
-      <!-- Bottone hamburger per mobile -->
-      <div class="md:hidden">
-        <button type="button" id="menu-toggle">
-          <svg class="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+      <!-- Bottone hamburger mobile (morph in X) -->
+      <button
+        id="menu-toggle"
+        class="md:hidden relative h-10 w-10 inline-grid place-items-center"
+        aria-controls="mobile-drawer"
+        aria-expanded="false"
+        aria-label="Open menu"
+      >
+        <span class="sr-only">Apri menu</span>
+        <!-- 3 linee: animiamo con data-[open=true] -->
+        <span class="line-1 block h-0.5 w-7 bg-white rounded transition-all duration-300 origin-center"></span>
+        <span class="line-2 block h-0.5 w-7 bg-white rounded transition-all duration-300 origin-center mt-1.5"></span>
+        <span class="line-3 block h-0.5 w-7 bg-white rounded transition-all duration-300 origin-center mt-1.5"></span>
+      </button>
     </div>
   </div>
 
-  <!-- Menu mobile -->
-  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 bg-indigo-900 z-50 relative">
-    {links.map(link => (
+  <!-- Overlay -->
+  <div
+    id="menu-overlay"
+    class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40 md:hidden"
+  ></div>
+
+  <!-- Drawer mobile da destra -->
+  <aside
+    id="mobile-drawer"
+    class="fixed right-0 top-0 h-screen w-80 max-w-[85vw] translate-x-full md:hidden
+           bg-indigo-900 z-50 shadow-xl
+           transition-transform duration-300 will-change-transform
+           pt-20 pb-10 px-6 flex flex-col gap-2"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="mobile-menu-title"
+  >
+    <h2 id="mobile-menu-title" class="sr-only">Menu</h2>
+
+    <!-- Header del drawer con bottone chiudi -->
+      <div class="absolute top-4 right-4">
+        <button
+          id="drawer-close"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full
+                text-white/90 hover:text-yellow-300 hover:bg-white/10 focus:outline-none
+                focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-indigo-900
+                transition"
+          aria-label="Chiudi menu"
+        >
+          <!-- icona X -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+
+    <!-- Link con piccolo stagger -->
+    {links.map((link, i) => (
       <a
         href={link.href}
-        class="text-white hover:text-yellow-300 py-1 flex items-center space-x-2"
+        class="text-white/95 hover:text-yellow-300 flex items-center gap-2 py-2
+               opacity-0 translate-y-1
+               transition-all duration-300"
+        style={`transition-delay:${Math.min(i * 60 + 60, 360)}ms`}
         target={link.external ? '_blank' : '_self'}
-        rel={link.external ? 'noopener noreferrer' : ''}
+        rel={link.external ? 'noopener noreferrer' : undefined}
       >
-        {link.icon && (
-          <iconify-icon icon={link.icon} width="20" class="text-yellow-300"></iconify-icon>
-        )}
-        <span>{link.name}</span>
+        {link.icon && (<iconify-icon icon={link.icon} width="20" class="text-yellow-300"></iconify-icon>)}
+        <span class="text-lg">{link.name}</span>
       </a>
     ))}
-  </div>
+  </aside>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  /** @type {HTMLElement|null} */
+  const nav = document.getElementById("site-nav");
+  /** @type {HTMLButtonElement|null} */
+  const btn = document.getElementById("menu-toggle");
+  /** @type {HTMLDivElement|null} */
+  const drawer = document.getElementById("mobile-drawer");
+  /** @type {HTMLDivElement|null} */
+  const overlay = document.getElementById("menu-overlay");
 
-  <!-- Overlay -->
-  <div id="menu-overlay" class="hidden fixed inset-0 bg-trasparent bg-opacity-50 z-40"></div>
+  if (!nav || !btn || !drawer || !overlay) return;
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("menu-toggle");
-      const menu = document.getElementById("mobile-menu");
-      const overlay = document.getElementById("menu-overlay");
+  let open = false;
 
-      const toggleMenu = () => {
-        menu?.classList.toggle("hidden");
-        overlay?.classList.toggle("hidden");
-      };
+// @ts-ignore
+  const setOpen = (v) => {
+    open = v;
 
-      btn?.addEventListener("click", toggleMenu);
-      overlay?.addEventListener("click", toggleMenu);
+    // Stato
+    nav.dataset.open = String(v);
+    btn.setAttribute("aria-expanded", String(v));
+    btn.setAttribute("aria-label", v ? "Close menu" : "Open menu");
+
+    // Drawer: toggle classi Tailwind invece di style.transform
+    drawer.classList.toggle("translate-x-full", !v);
+    drawer.classList.toggle("translate-x-0", v);
+
+    // Overlay
+    overlay.style.opacity = v ? "1" : "0";
+    overlay.style.pointerEvents = v ? "auto" : "none";
+
+    // Blocca scroll sotto
+    document.documentElement.style.overflow = v ? "hidden" : "";
+    document.body.style.overflow = v ? "hidden" : "";
+
+    // Stagger link
+    drawer.querySelectorAll("a").forEach((el) => {
+      el.classList.toggle("opacity-0", !v);
+      el.classList.toggle("translate-y-1", !v);
     });
-  </script>
+
+    // Focus
+    if (v) {
+      const first = drawer.querySelector("a");
+      if (first && typeof first.focus === "function") setTimeout(() => first.focus(), 120);
+    } else {
+      if (typeof btn.focus === "function") btn.focus();
+    }
+
+    // X per chiudere menu hamburgher
+    /** @type {HTMLButtonElement|null} */
+    const closeBtn = document.getElementById("drawer-close");
+    if (closeBtn) closeBtn.addEventListener("click", () => setOpen(false));
+
+
+    // Hamburger morph
+    const lines = btn.querySelectorAll("span");
+    const l1 = lines[0], l2 = lines[1], l3 = lines[2];
+    if (l1 && l2 && l3) {
+      if (v) {
+        l1.style.transform = "translateY(8px) rotate(45deg)";
+        l2.style.opacity = "0";
+        l3.style.transform = "translateY(-8px) rotate(-45deg)";
+      } else {
+        l1.style.transform = "";
+        l2.style.opacity = "1";
+        l3.style.transform = "";
+      }
+    }
+  };
+
+
+  const toggle = () => setOpen(!open);
+
+  btn.addEventListener("click", toggle);
+  overlay.addEventListener("click", () => setOpen(false));
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape" && open) setOpen(false); });
+  drawer.addEventListener("click", (e) => {
+    const t = e.target instanceof Element ? e.target : null;
+    if (t && t.closest("a")) setOpen(false);
+  });
+  
+});
+
+</script>
+
+
+
 </nav>
