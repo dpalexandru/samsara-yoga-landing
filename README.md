@@ -1,8 +1,13 @@
 # La Ruota del Samsara (landing_page)
 
-Sito web per una professionista yoga (mia moglie) **La Ruota del Samsara**, un progetto dedicato allo yoga, alla consapevolezza e al benessere interiore.
+Sito vetrina per una professionista yoga **La Ruota del Samsara**, un progetto dedicato allo yoga, alla consapevolezza e al benessere interiore.
 
 Visita il sito online: [https://laruotadelsamsara.com](https://laruotadelsamsara.com)
+
+Obiettivi web-app (Astro)
+-messaggio chiaro
+-contatti e conversioni
+-posizionamento seo per trafico sulle ricerche "Obiettivi web-app (Astro)"
 
 ## Descrizione
 
@@ -14,6 +19,8 @@ Il sito è stato realizzato con **Astro** e **Tailwind CSS**, garantendo un desi
 - **Astro**: framework statico per il rendering veloce e SEO-friendly  
 - **Tailwind CSS**: per lo stile responsive e minimalista  
 - **Netlify**: per il deploy e l’hosting del sito  
+- **GSAP (GreenSock Animation Platform)**: per animazioni fluide, naturali e controllate con scroll e transizioni
+
 
 ## Suggerimenti
 

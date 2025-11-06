@@ -1,0 +1,6 @@
+- bottone centrale (uguale in ogni pagina)
+- Componente per ogni sezione in home page
+- effetto pastello anizmazione 
+- animare i componenti in home page (effetto che salgono)
+- struttured data per le faq seo
+- uniformare (tutto il sito con lo stesso sfondo)

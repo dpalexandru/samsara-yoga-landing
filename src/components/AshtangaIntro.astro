@@ -1,0 +1,106 @@
+---
+/**
+ * AshtangaIntro.astro
+ * Sezione informativa con titolo, 3 paragrafi e un pulsante CTA.
+ * Effetto "pennarello" che si disegna sotto il titolo (GSAP).
+ */
+
+type Props = {
+  id?: string;
+  title?: string;
+  p1?: string;
+  p2?: string;
+  p3?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+};
+
+const {
+  id = "ashtanga-intro",
+  title = "Cos'è l'Ashtanga Vinyasa Yoga?",
+  p1 = "L'Ashtanga è una pratica dinamica di Yoga dove le posture (asana) si legano in una sequenza precisa, come una ghirlanda di fiori. Il respiro e il movimento sono perfettamente sincronizzati, creando una danza fluida e meditativa.",
+  p2 = "<strong>Stile Mysore:</strong> Questo termine deriva dal nome della città di Mysore, nel Sud dell’India, dove viene praticato questo stile di Yoga. Il Mysore è un approccio in cui ogni allievo, all’interno di una classe, può srotolare il suo tappetino ed eseguire la sequenza di Ashtanga senza essere guidato, seguendo i propri tempi.",
+  p3 = "L’insegnante ha il compito di osservare, correggere e, quando lo studente è pronto, introdurre nuovi asana per avanzare nella serie. Si è in una classe, ma è come se la lezione fosse individuale: una pratica profonda, personalizzata e rispettosa dei tempi di ciascuno.",
+  ctaHref = "/chisono",
+  ctaLabel = "Su di me",
+} = Astro.props;
+---
+
+<section id={id} class="lotus-section snap-start h-auto md:h-full flex flex-col items-center justify-center text-indigo-900 px-4 py-12">
+  <div class="lotus-content max-w-4xl text-center">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">
+      <span id="ashtanga-title" class="inline-block relative pb-1">
+        {/* pennarello sottolineatura */}
+        <span class="ink-underline" aria-hidden="true"></span>
+        {title}
+      </span>
+    </h2>
+
+    <div class="space-y-6 text-lg leading-relaxed">
+      <p set:html={p1}></p>
+      <p set:html={p2}></p>
+      <p set:html={p3}></p>
+
+      <a href={ctaHref} class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition inline-block">
+        {ctaLabel}
+      </a>
+    </div>
+  </div>
+
+<style is:global>
+  /* Pennarello sotto il titolo */
+  #ashtanga-title {
+    line-height: 1.2;
+  }
+
+  #ashtanga-title .ink-underline {
+    position: absolute;
+    left: 0;
+    bottom: -0.7em;         /* ancora più distante dal testo */
+    width: 100%;
+    height: 1.4em;          /* pennellata ampia e visibile */
+    border-radius: 1.5em;
+    transform-origin: left center;
+    transform: scaleX(0) skewX(-5deg);
+    opacity: 0.95;
+
+    /* gradiente verde vibrante ma rilassante */
+    background: linear-gradient(
+      90deg,
+      #bbf7d0 0%,    /* verde chiaro pastello */
+      #4ade80 35%,   /* verde foglia */
+      #15803d 100%   /* verde profondo zen */
+    );
+
+    /* curva più pronunciata e fluida (effetto pennellata zen) */
+    clip-path: path("M0,20 C150,25 300,10 600,20 S1200,25 1800,20");
+
+    /* effetto pennarello: lucentezza e piccola ombra interna */
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 -3px 6px rgba(255, 255, 255, 0.15) inset,
+      0 3px 3px rgba(0, 0, 0, 0.08) inset;
+
+    pointer-events: none;
+  }
+</style>
+
+
+
+
+  <!-- GSAP via CDN (test certo) -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap === 'undefined') return;
+
+      // 2) Pennarello: si disegna da sinistra a destra
+      gsap.to('#ashtanga-title .ink-underline', {
+        scaleX: 1,
+        duration: 2,
+        ease: 'power3.out',
+        delay: 0.15
+      });
+    });
+  </script>
+</section>

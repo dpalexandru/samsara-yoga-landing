@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import stylesheet from '../styles/global.css';
 import "../styles/global.css";
+import AshtangaIntro from '../components/AshtangaIntro.astro';
+
 
 ---
 <Layout>
@@ -28,36 +30,12 @@ import "../styles/global.css";
       </div>
     </section>
 
-<!-- Sezione 1.5: Cos'è l'Ashtanga Vinyasa Yoga -->
-<section class="lotus-section snap-start h-auto md:h-full flex flex-col items-center justify-center text-indigo-900 px-4 py-12">
-  <div class="lotus-content max-w-4xl text-center">
-    <h2 class="text-2xl md:text-3xl font-bold mb-6">Cos'è l'Ashtanga Vinyasa Yoga?</h2>
 
-    <div class="space-y-6 text-lg leading-relaxed">
-      <p>
-        L'Ashtanga è una pratica dinamica di Yoga dove le posture (asana) si legano in una sequenza precisa, come una ghirlanda di fiori.
-        Il respiro e il movimento sono perfettamente sincronizzati, creando una danza fluida e meditativa.
-      </p>
-      <p>
-        <strong>Stile Mysore:</strong> Questo termine deriva dal nome della città di Mysore, nel Sud dell’India, dove viene praticato questo stile di Yoga.
-        Il Mysore è un approccio in cui ogni allievo, all’interno di una classe, può srotolare il suo tappetino ed eseguire la sequenza di Ashtanga
-        senza essere guidato, seguendo i propri tempi.
-      </p>
-      <p>
-        L’insegnante ha il compito di osservare, correggere e, quando lo studente è pronto, introdurre nuovi asana per avanzare nella serie.
-        Si è in una classe, ma è come se la lezione fosse individuale: una pratica profonda, personalizzata e rispettosa dei tempi di ciascuno.
-      </p>
-      <a href="/chisono" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
-        Su di me
-      </a>
-    </div>
-  </div>
-</section>
+      <!-- Sezione 1.5: Cos'è l'Ashtanga Vinyasa Yoga -->
+      <AshtangaIntro />
 
 
-    
-
-          <!-- Sezione 3: Benefici -->
+      <!-- Sezione 3: Benefici -->
       <section class="snap-start h-auto md:h-full flex flex-col items-center justify-center bg-emerald-50 text-emerald-900 px-4 py-10">
         <h2 class="text-2xl font-bold mb-8 text-center">Benefici</h2>
         
