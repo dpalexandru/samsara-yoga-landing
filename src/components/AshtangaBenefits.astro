@@ -1,0 +1,215 @@
+---
+/**
+ * AshtangaBenefits.astro – componente, no-props
+ * - Toggle "Leggi di più" nativo (details/summary) → niente JS per il pulsante
+ * - GSAP + ScrollTrigger via CDN, animazioni come prima (mobile sì, desktop soft)
+ * - 3 card statiche
+ */
+
+const SECTION_ID = "benefici";
+const TITLE = "Benefici";
+---
+
+<section
+  id={SECTION_ID}
+  class="snap-start h-auto md:h-full flex flex-col items-center justify-center bg-emerald-50 text-emerald-900 px-4 py-10"
+>
+  <h2 class="text-2xl font-bold mb-8 text-center">{TITLE}</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+    <!-- Card 1 -->
+    <article class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
+      <iconify-icon icon="mdi:meditation" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
+      <h3 class="text-lg font-bold mb-2">Maggiore Flessibilità</h3>
+      <p class="text-sm mb-2">
+        L'Ashtanga Yoga aumenta la flessibilità attraverso sequenze dinamiche che allungano e rafforzano i muscoli in modo coordinato con il respiro.
+      </p>
+
+      <!-- Toggle nativo: nessun JS -->
+      <details class="expand mt-2 text-center">
+        <summary class="cursor-pointer inline-flex items-center gap-1 font-semibold text-sm text-emerald-700 underline underline-offset-2 rounded-md px-1">
+          <span class="label-open">Leggi di più</span>
+          <span class="label-close hidden">Nascondi</span>
+        </summary>
+        <div class="content mt-2 grid gap-2 justify-items-center">
+          <p class="text-sm">
+            La pratica regolare scioglie gradualmente le tensioni e migliora la mobilità articolare, portando a una maggiore elasticità del corpo.
+          </p>
+          <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">Scrivimi</a>
+        </div>
+      </details>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
+      <iconify-icon icon="mdi:flower" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
+      <h3 class="text-lg font-bold mb-2">Riduzione dello Stress</h3>
+      <p class="text-sm mb-2">
+        L'Ashtanga Yoga calma la mente attraverso la sincronizzazione di respiro e movimento, allontanando lo stress.
+      </p>
+
+      <details class="expand mt-2 text-center">
+        <summary class="cursor-pointer inline-flex items-center gap-1 font-semibold text-sm text-emerald-700 underline underline-offset-2 rounded-md px-1">
+          <span class="label-open">Leggi di più</span>
+          <span class="label-close hidden">Nascondi</span>
+        </summary>
+        <div class="content mt-2 grid gap-2 justify-items-center">
+          <p class="text-sm">
+            La pratica costante e impegnativa delle sequenze allena la concentrazione e la presenza mentale, migliorando l'attenzione nella quotidianità.
+          </p>
+          <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">Scrivimi</a>
+        </div>
+      </details>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
+      <iconify-icon icon="mdi:arm-flex-outline" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
+      <h3 class="text-lg font-bold mb-2">Forza e Consapevolezza</h3>
+      <p class="text-sm mb-2">
+        L'Ashtanga Yoga rafforza il corpo con posture impegnative che richiedono stabilità e controllo.
+      </p>
+
+      <details class="expand mt-2 text-center">
+        <summary class="cursor-pointer inline-flex items-center gap-1 font-semibold text-sm text-emerald-700 underline underline-offset-2 rounded-md px-1">
+          <span class="label-open">Leggi di più</span>
+          <span class="label-close hidden">Nascondi</span>
+        </summary>
+        <div class="content mt-2 grid gap-2 justify-items-center">
+          <p class="text-sm">
+            Le transizioni fluide sviluppano forza funzionale, resistenza e controllo muscolare consapevole in tutto il corpo.
+          </p>
+          <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">Scrivimi</a>
+        </div>
+      </details>
+    </article>
+  </div>
+</section>
+
+<style is:global>
+  /* Label “Leggi di più / Nascondi” via CSS */
+  .expand > summary::-webkit-details-marker { display: none; }
+  .expand[open] > summary .label-open { display: none; }
+  .expand[open] > summary .label-close { display: inline; }
+  .expand:not([open]) > summary .label-close { display: none; }
+
+  /* Anti-overlay: i controlli devono ricevere i click */
+  #benefici .card { position: relative; transform-style: preserve-3d; backface-visibility: hidden; }
+  #benefici .card summary, #benefici .card a { position: relative; z-index: 20; pointer-events: auto; }
+  .gsap-pin-spacer, .pin-spacer { pointer-events: none !important; }
+  #benefici [data-overlay], #benefici::before, #benefici::after { pointer-events: none; }
+</style>
+
+<!-- Iconify (solo se non già incluso globalmente) -->
+<script is:inline src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+<!-- GSAP animazioni (come prima), isolate dal toggle -->
+<script is:inline>
+  const DEBUG_SCROLL = false;
+
+  function ensureGSAP() {
+    return new Promise((resolve, reject) => {
+      if (window.gsap && window.ScrollTrigger) return resolve();
+      const s1 = document.createElement('script');
+      s1.src = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
+      s1.onload = () => {
+        const s2 = document.createElement('script');
+        s2.src = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js';
+        s2.onload = resolve;
+        s2.onerror = reject;
+        document.head.appendChild(s2);
+      };
+      s1.onerror = reject;
+      document.head.appendChild(s1);
+    });
+  }
+
+  const bootAnim = async () => {
+    const section = document.getElementById('benefici');
+    if (!section) return;
+
+    try {
+      await ensureGSAP();
+      const { gsap, ScrollTrigger } = window;
+      gsap.registerPlugin(ScrollTrigger);
+
+      const titleEl = section.querySelector('h2');
+      const cards = section.querySelectorAll('.card');
+
+      // Stato iniziale come prima
+      if (titleEl) gsap.set(titleEl, { opacity: 0, willChange: 'transform, opacity' });
+      cards.forEach((c) => gsap.set(c, { opacity: 0, willChange: 'transform, opacity, filter' }));
+
+      // Reveal mask titolo (come prima)
+      const runTitle = (startVal) => {
+        if (!titleEl) return;
+        gsap.set(titleEl, { clipPath: 'inset(0 0 100% 0)' });
+        gsap.to(titleEl, {
+          clipPath: 'inset(0 0 0% 0)', duration: 0.9, ease: 'power3.out',
+          scrollTrigger: { trigger: titleEl, start: startVal, markers: DEBUG_SCROLL, once: true }
+        });
+        gsap.fromTo(titleEl, { opacity: 0, y: 20 }, {
+          opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: titleEl, start: startVal, markers: DEBUG_SCROLL, once: true }
+        });
+      };
+
+      // “Paper fold” su mobile (rotationX) come prima
+      const runCardsMobile = (startVal) => {
+        cards.forEach((card, i) => {
+          gsap.fromTo(card,
+            { opacity: 0, rotationX: -65, y: 24, transformPerspective: 800, transformOrigin: '50% 0%', boxShadow: '0 0 0 rgba(0,0,0,0)' },
+            {
+              opacity: 1, rotationX: 0, y: 0, duration: 0.6, ease: 'power3.out', delay: i * 0.07,
+              boxShadow: '0 12px 20px rgba(0,0,0,0.08)',
+              scrollTrigger: { trigger: card, start: startVal, markers: DEBUG_SCROLL, once: true }
+            }
+          );
+        });
+      };
+
+      // Desktop: animazione soft (fade/slide), se preferisci ZERO animazioni basta killare come facevamo
+      const runCardsDesktop = (startVal) => {
+        gsap.fromTo(cards,
+          { opacity: 0, y: 18 },
+          {
+            opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1,
+            scrollTrigger: { trigger: section, start: startVal, markers: DEBUG_SCROLL, once: true }
+          }
+        );
+      };
+
+      const mm = gsap.matchMedia();
+      mm.add('(max-width: 767px)', () => {
+        runTitle('top 92%');
+        runCardsMobile('top 95%');
+      });
+      mm.add('(min-width: 768px)', () => {
+        runTitle('top 85%');
+        runCardsDesktop('top 88%');
+      });
+
+      // Ricalcolo
+      window.addEventListener('load', () => ScrollTrigger.refresh());
+
+      // Reduced-motion
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        ScrollTrigger.getAll().forEach((st) => st.disable());
+        if (titleEl) gsap.set(titleEl, { clearProps: 'all', opacity: 1 });
+        cards.forEach((c) => gsap.set(c, { clearProps: 'all', opacity: 1 }));
+      }
+    } catch (_) {
+      // Se GSAP non carica, UI e toggle restano ok
+    }
+  };
+
+  // Avvio sicuro in ogni scenario (Astro incluso)
+  const start = () => { try { bootAnim(); } catch (e) { console.error(e); } };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+  document.addEventListener('astro:page-load', start);
+  document.addEventListener('astro:after-swap', start);
+</script>

@@ -7,7 +7,7 @@ Visita il sito online: [https://laruotadelsamsara.com](https://laruotadelsamsara
 Obiettivi web-app (Astro)
 -messaggio chiaro
 -contatti e conversioni
--posizionamento seo per trafico sulle ricerche "Obiettivi web-app (Astro)"
+-posizionamento seo sulle ricerche "yoga asshtanga cagliari"
 
 ## Descrizione
 

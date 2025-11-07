@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import stylesheet from '../styles/global.css';
 import "../styles/global.css";
 import AshtangaIntro from '../components/AshtangaIntro.astro';
+import AshtangaBenefits from '../components/AshtangaBenefits.astro';
+
 
 
 ---
@@ -31,84 +33,11 @@ import AshtangaIntro from '../components/AshtangaIntro.astro';
     </section>
 
 
-      <!-- Sezione 1.5: Cos'è l'Ashtanga Vinyasa Yoga -->
+      <!-- Sezione: Cos'è l'Ashtanga Vinyasa Yoga componente personalizzabile se serve con le props-->
       <AshtangaIntro />
 
-
-      <!-- Sezione 3: Benefici -->
-      <section class="snap-start h-auto md:h-full flex flex-col items-center justify-center bg-emerald-50 text-emerald-900 px-4 py-10">
-        <h2 class="text-2xl font-bold mb-8 text-center">Benefici</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
-          
-          <!-- Card 1 -->
-          <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-            <iconify-icon icon="mdi:meditation" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
-            <h3 class="text-lg font-bold mb-2">Maggiore Flessibilità</h3>
-            
-            <p class="text-sm mb-2">
-              L'Ashtanga Yoga aumenta la flessibilità attraverso sequenze dinamiche che allungano e rafforzano i muscoli in modo coordinato con il respiro.            </p>
-          
-            <div class="extra-text hidden text-sm mb-2">
-              La pratica regolare scioglie gradualmente le tensioni e migliora la mobilità articolare, portando a una maggiore elasticità del corpo.            </div>
-          
-            <button class="toggle-more text-emerald-700 font-semibold text-sm hover:underline">
-              Leggi di più
-            </button>
-          
-            <div class="prenota-button hidden mt-4">
-              <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
-                Scrivimi
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-            <iconify-icon icon="mdi:flower" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
-            <h3 class="text-lg font-bold mb-2">Riduzione dello Stress</h3>
-
-            <p class="text-sm mb-2">
-              L'Ashtanga Yoga calma la mente attraverso la sincronizzazione di respiro e movimento, allontanando lo stress.             </p>
-
-            <div class="extra-text hidden text-sm mb-2">
-              La pratica costante e impegnativa delle sequenze allena la concentrazione e la presenza mentale, migliorando l'attenzione e la presenza nella quotidianità            </div>
-
-            <button class="toggle-more text-emerald-700 font-semibold text-sm hover:underline">
-              Leggi di più
-            </button>
-
-            <div class="prenota-button hidden mt-4">
-              <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
-                Scrivimi
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-            <iconify-icon icon="mdi:arm-flex-outline" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
-            <h3 class="text-lg font-bold mb-2">Forza e Consapevolezza</h3>
-
-            <p class="text-sm mb-2">
-              L'Ashtanga Yoga rafforza il corpo attraverso posture che impegnano profondamente i muscoli, sostenendo il peso del corpo e richiedendo stabilità.             </p>
-
-            <div class="extra-text hidden text-sm mb-2">
-              Le transizioni fluide tra le posizioni sviluppano forza funzionale, resistenza e un controllo muscolare consapevole in tutto il corpo.            </div>
-
-            <button class="toggle-more text-emerald-700 font-semibold text-sm hover:underline">
-              Leggi di più
-            </button>
-
-            <div class="prenota-button hidden mt-4">
-              <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">
-              Scrivimi      
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      <!-- Sezione: benefici componente -->
+   <AshtangaBenefits />
 
    
    <!-- Sezione 4: Orari -->
