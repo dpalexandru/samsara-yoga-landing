@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Evita cartelle inutili
+Disallow: /admin/
+Disallow: /draft/
+Disallow: /private/
+
+# Sitemap principale Astro
+Sitemap: https://laruotadelsamsara.com/sitemap-index.xml
