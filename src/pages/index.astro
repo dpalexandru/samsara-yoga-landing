@@ -4,25 +4,28 @@ import stylesheet from '../styles/global.css';
 import "../styles/global.css";
 import AshtangaIntro from '../components/AshtangaIntro.astro';
 import AshtangaBenefits from '../components/AshtangaBenefits.astro';
-
-
-
 ---
+
 <Layout>
   <main class="flex flex-col h-auto overflow-y-auto scroll-smooth snap-y snap-mandatory md:snap-none">
 
     <!-- Sezione 1: Hero -->
-    <section class="snap-start relative h-[40vh] md:h-[40vh] flex items-center justify-center pt-16 md:pt-0">
-      <img src="/yoga-hero.jpg" alt="Hero yoga" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+    <section class="snap-start relative h-[40vh] md:h-[40vh] flex items-center justify-center pt-16 md:pt-0 will-change-auto">
+      <img 
+        src="/yoga-hero.jpg" 
+        alt="Hero yoga" 
+        class="absolute inset-0 w-full h-full object-cover brightness-75"
+        loading="eager"
+        decoding="async"
+      />
     
       <div class="relative z-10 text-center px-6 max-w-3xl">
         <h1 class="hero-quote text-2xl md:text-4xl">
-          “Lo yoga è l’arte di conoscere se stessi attraverso se stessi.”
+          "Lo yoga è l'arte di conoscere se stessi attraverso se stessi."
           <span>– K. P. Jois</span>
         </h1>
     
         <a href="/contattami" class="cta-btn">
-          <!-- icona busta -->
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V6a2 2 0 00-2-2H3a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -32,382 +35,469 @@ import AshtangaBenefits from '../components/AshtangaBenefits.astro';
       </div>
     </section>
 
+    <!-- Sezione: Cos'è l'Ashtanga Vinyasa Yoga -->
+    <AshtangaIntro />
 
-      <!-- Sezione: Cos'è l'Ashtanga Vinyasa Yoga componente personalizzabile se serve con le props-->
-      <AshtangaIntro />
+    <!-- Sezione: Benefici -->
+    <AshtangaBenefits />
 
-      <!-- Sezione: benefici componente -->
-   <AshtangaBenefits />
-
-   
-   <!-- Sezione 4: Orari -->
-   <section class="snap-start h-[45vh] md:h-full flex flex-col items-center justify-center bg-indigo-50 text-indigo-900 px-4">
-    <div class="text-center">
-      <h2 class="text-2xl font-bold mb-6">Dove mi trovi:</h2>
-  
-      <div class="flex flex-col items-center gap-4 text-lg">
-        <div class="flex items-center gap-2">
-          <iconify-icon icon="mdi:map-marker" width="24" height="24" class="text-emerald-500"></iconify-icon>
-          Cagliari - Tres Tiempos
-        </div>
-        <span>Via delle Cicale, 1, 09134 Cagliari CA</span>
-        <div class="flex items-center gap-2">
-          <iconify-icon icon="mdi:map-marker" width="24" height="24" class="text-emerald-500"></iconify-icon>
-          Dolianova - WolfGym
-        </div>
-        <span>Corso Repubblica, 272, 09041 Dolianova CA</span>
-
-     
-      </div>
-  
-      <!-- Bottone per vedere orari completi -->
-      <a 
-        href="/orarielezioni" 
-        class="inline-block mt-6 bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-6 py-3 rounded-full transition"
-      >
-        Vedi orari e lezioni complete
-      </a>
-    </div>
-  </section>
-
-
-<!-- Sezione 2: Galleria -->
-<section class="snap-start h-auto md:h-full bg-gradient-to-b from-white to-indigo-50 text-indigo-900 flex flex-col px-4 py-12 justify-start">
-  <h2 class="text-3xl font-bold text-center mb-8">Galleria</h2>
-
-  <div class="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl border border-indigo-100 bg-white h-[400px] md:h-[500px]">
-    <div 
-      id="gallery-slider" 
-      class="flex transition-transform duration-500 ease-in-out h-full"
-      style="transform: translateX(0%)"
-    >
-      <img src="/gallery1.jpg" alt="Foto 1" class="w-full object-cover flex-shrink-0 h-full" />
-      <img src="/gallery2.jpg" alt="Foto 2" class="w-full object-cover flex-shrink-0 h-full" />
-      <img src="/gallery3.jpg" alt="Foto 3" class="w-full object-cover flex-shrink-0 h-full" />
-      <img src="/gallery4.jpg" alt="Foto 4" class="w-full object-cover flex-shrink-0 h-full" />
-    </div>
-
-    <!-- Frecce slider -->
-    <button 
-      id="prev" 
-      class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white hover:bg-yellow-300 text-indigo-900 p-3 rounded-full shadow-md transition"
-      aria-label="Foto precedente"
-    >
-      <iconify-icon icon="mdi:chevron-left" width="32" height="32"></iconify-icon>
-    </button>
-
-    <button 
-      id="next" 
-      class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white hover:bg-yellow-300 text-indigo-900 p-3 rounded-full shadow-md transition"
-      aria-label="Foto successiva"
-    >
-      <iconify-icon icon="mdi:chevron-right" width="32" height="32"></iconify-icon>
-    </button>
-  </div>
-</section>
-
-<section id="faq" class="mt-12">
-  <h2 class="text-2xl md:text-3xl font-bold text-emerald-800 text-center mb-6">
-    Domande frequenti – Ashtanga Yoga Cagliari
-  </h2>
-
-  <div class="max-w-3xl mx-auto space-y-3">
-    <!-- FAQ 1 -->
-    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
-      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
-        Dove posso praticare Ashtanga Yoga a Cagliari?
-        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
-      </summary>
-      <div class="mt-2 text-gray-700">
-        Pratichiamo a <strong>Cagliari (Tres Tiempos)</strong> e a <strong>Dolianova (WolfGym)</strong>. 
-        Contattami per info su disponibilità e calendario aggiornato.
-      </div>
-    </details>
-
-    <!-- FAQ 2 -->
-    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
-      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
-        L’Ashtanga Yoga è adatto ai principianti?
-        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
-      </summary>
-      <div class="mt-2 text-gray-700">
-        Sì. Lo <strong>stile Mysore</strong> permette a ciascuno di procedere al proprio ritmo con assistenza individuale. 
-        Le lezioni guidate sono utili per imparare la sequenza e la respirazione.
-      </div>
-    </details>
-
-    <!-- FAQ 3 -->
-    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
-      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
-        Come prenoto una prova gratuita di Ashtanga Yoga a Cagliari?
-        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
-      </summary>
-      <div class="mt-2 text-gray-700">
-        Clicca su <a href="/contattami" class="text-emerald-700 underline font-semibold">Contattami</a> 
-        e scrivimi: ti risponderò con tutte le informazioni per la prova.
-      </div>
-    </details>
-
-    <!-- FAQ 4 -->
-    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
-      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
-        Cosa porto alla lezione?
-        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
-      </summary>
-      <div class="mt-2 text-gray-700">
-        Tappetino e asciugamano. Abbigliamento comodo. Se non hai il tappetino, chiedi in anticipo la disponibilità.
-      </div>
-    </details>
-
+    <!-- Sezione 4: Orari -->
+    <section class="snap-start h-[45vh] md:h-full flex flex-col items-center justify-center bg-indigo-50 text-indigo-900 px-4 py-10 will-change-auto">
+      <div class="text-center location-content">
+        <h2 class="text-2xl font-bold mb-6">Dove mi trovi:</h2>
     
-
-    <!-- FAQ 6 -->
-    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
-      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
-        Ci sono controindicazioni?
-        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
-      </summary>
-      <div class="mt-2 text-gray-700">
-        In caso di infortuni, condizioni mediche o gravidanza, parla con il tuo medico e informami prima della lezione
-        per adattare la pratica in sicurezza.
+        <div class="flex flex-col items-center gap-4 text-lg">
+          <div class="flex items-center gap-2">
+            <iconify-icon icon="mdi:map-marker" width="24" height="24" class="text-emerald-500"></iconify-icon>
+            Cagliari - Tres Tiempos
+          </div>
+          <span>Via delle Cicale, 1, 09134 Cagliari CA</span>
+          <div class="flex items-center gap-2">
+            <iconify-icon icon="mdi:map-marker" width="24" height="24" class="text-emerald-500"></iconify-icon>
+            Dolianova - WolfGym
+          </div>
+          <span>Corso Repubblica, 272, 09041 Dolianova CA</span>
+        </div>
+    
+        <a 
+          href="/orarielezioni" 
+          class="inline-block mt-6 bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-6 py-3 rounded-full transition-colors duration-300"
+        >
+          Vedi orari e lezioni complete
+        </a>
       </div>
-    </details>
+    </section>
 
-    <!-- FAQ 7 -->
-    <details class="group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition">
-      <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
-        Qual è la differenza tra Mysore e lezione guidata?
-        <span class="ml-3 text-emerald-600 transition group-open:rotate-180">⌄</span>
-      </summary>
-      <div class="mt-2 text-gray-700">
-        Nella <strong>Mysore</strong> pratichi autonomamente la sequenza con assistenza individuale; 
-        nella <strong>lezione guidata</strong> l’insegnante conduce il gruppo passo dopo passo.
+    <!-- Sezione 5: Galleria -->
+    <section class="snap-start h-auto md:h-full bg-gradient-to-b from-white to-indigo-50 text-indigo-900 flex flex-col px-4 py-12 justify-start will-change-auto">
+      <h2 class="text-3xl font-bold text-center mb-8 gallery-title">Galleria</h2>
+
+      <div class="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-xl border border-indigo-100 bg-white h-[400px] md:h-[500px]">
+        <div 
+          id="gallery-slider" 
+          class="flex h-full"
+          style="transform: translateX(0%); transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1); will-change: transform;"
+        >
+          <img src="/gallery1.jpg" alt="Foto 1" class="w-full object-cover flex-shrink-0 h-full" loading="lazy" />
+          <img src="/gallery2.jpg" alt="Foto 2" class="w-full object-cover flex-shrink-0 h-full" loading="lazy" />
+          <img src="/gallery3.jpg" alt="Foto 3" class="w-full object-cover flex-shrink-0 h-full" loading="lazy" />
+          <img src="/gallery4.jpg" alt="Foto 4" class="w-full object-cover flex-shrink-0 h-full" loading="lazy" />
+        </div>
+
+        <!-- Frecce slider -->
+        <button 
+          id="prev" 
+          class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white hover:bg-yellow-300 text-indigo-900 p-3 rounded-full shadow-md transition-colors duration-300 z-10"
+          aria-label="Foto precedente"
+        >
+          <iconify-icon icon="mdi:chevron-left" width="32" height="32"></iconify-icon>
+        </button>
+
+        <button 
+          id="next" 
+          class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white hover:bg-yellow-300 text-indigo-900 p-3 rounded-full shadow-md transition-colors duration-300 z-10"
+          aria-label="Foto successiva"
+        >
+          <iconify-icon icon="mdi:chevron-right" width="32" height="32"></iconify-icon>
+        </button>
       </div>
-    </details>
-  </div>
+    </section>
 
-  <!-- CTA finale -->
-  <div class="text-center mt-8">
-    <a href="/contattami" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-full shadow-sm transition">
-      Prenota la tua prova gratuita
-    </a>
-  </div>
-</section>
+    <!-- Sezione 6: FAQ -->
+    <section id="faq" class="snap-start px-4 py-12 bg-emerald-50 will-change-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-emerald-800 text-center mb-6 faq-title">
+        Domande frequenti – Ashtanga Yoga Cagliari
+      </h2>
 
+      <div class="max-w-3xl mx-auto space-y-3 faq-container">
+        <!-- FAQ 1 -->
+        <details class="faq-item group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition-shadow duration-300">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+            Dove posso praticare Ashtanga Yoga a Cagliari?
+            <span class="ml-3 text-emerald-600 transition-transform duration-300 group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="mt-2 text-gray-700">
+            Pratichiamo a <strong>Cagliari (Tres Tiempos)</strong> e a <strong>Dolianova (WolfGym)</strong>. 
+            Contattami per info su disponibilità e calendario aggiornato.
+          </div>
+        </details>
 
+        <!-- FAQ 2 -->
+        <details class="faq-item group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition-shadow duration-300">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+            L'Ashtanga Yoga è adatto ai principianti?
+            <span class="ml-3 text-emerald-600 transition-transform duration-300 group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="mt-2 text-gray-700">
+            Sì. Lo <strong>stile Mysore</strong> permette a ciascuno di procedere al proprio ritmo con assistenza individuale. 
+            Le lezioni guidate sono utili per imparare la sequenza e la respirazione.
+          </div>
+        </details>
 
+        <!-- FAQ 3 -->
+        <details class="faq-item group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition-shadow duration-300">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+            Come prenoto una prova gratuita di Ashtanga Yoga a Cagliari?
+            <span class="ml-3 text-emerald-600 transition-transform duration-300 group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="mt-2 text-gray-700">
+            Clicca su <a href="/contattami" class="text-emerald-700 underline font-semibold hover:text-emerald-800 transition-colors">Contattami</a> 
+            e scrivimi: ti risponderò con tutte le informazioni per la prova.
+          </div>
+        </details>
 
+        <!-- FAQ 4 -->
+        <details class="faq-item group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition-shadow duration-300">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+            Cosa porto alla lezione?
+            <span class="ml-3 text-emerald-600 transition-transform duration-300 group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="mt-2 text-gray-700">
+            Tappetino e asciugamano. Abbigliamento comodo. Se non hai il tappetino, chiedi in anticipo la disponibilità.
+          </div>
+        </details>
 
-    <!-- Script slider -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const slider = document.getElementById("gallery-slider");
-        const prevBtn = document.getElementById("prev");
-        const nextBtn = document.getElementById("next");
+        <!-- FAQ 5 -->
+        <details class="faq-item group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition-shadow duration-300">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+            Ci sono controindicazioni?
+            <span class="ml-3 text-emerald-600 transition-transform duration-300 group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="mt-2 text-gray-700">
+            In caso di infortuni, condizioni mediche o gravidanza, parla con il tuo medico e informami prima della lezione
+            per adattare la pratica in sicurezza.
+          </div>
+        </details>
 
-        if (slider && prevBtn && nextBtn) {
-          const slides = slider.children;
-          let index = 0;
+        <!-- FAQ 6 -->
+        <details class="faq-item group border border-emerald-200 rounded-lg bg-white p-4 open:shadow-md transition-shadow duration-300">
+          <summary class="flex cursor-pointer items-center justify-between font-semibold text-emerald-800">
+            Qual è la differenza tra Mysore e lezione guidata?
+            <span class="ml-3 text-emerald-600 transition-transform duration-300 group-open:rotate-180">⌄</span>
+          </summary>
+          <div class="mt-2 text-gray-700">
+            Nella <strong>Mysore</strong> pratichi autonomamente la sequenza con assistenza individuale; 
+            nella <strong>lezione guidata</strong> l'insegnante conduce il gruppo passo dopo passo.
+          </div>
+        </details>
+      </div>
 
-          const updateSlider = () => {
-            const offset = index * -100;
-            slider.style.transform = `translateX(${offset}%)`;
-          };
+      <!-- CTA finale -->
+      <div class="text-center mt-8">
+        <a href="/contattami" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-full shadow-sm transition-colors duration-300">
+          Prenota la tua prova gratuita
+        </a>
+      </div>
+    </section>
 
-          nextBtn.addEventListener("click", () => {
-            if (index < slides.length - 1) {
-              index++;
-              updateSlider();
-            }
-          });
+  </main>
+</Layout>
 
-          prevBtn.addEventListener("click", () => {
-            if (index > 0) {
-              index--;
-              updateSlider();
-            }
-          });
-        }
-      });
-    </script>
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const toggles = document.querySelectorAll('.toggle-more');
-      
-          toggles.forEach((toggle) => {
-            toggle.addEventListener('click', (e) => {
-              const button = e.currentTarget;
-              if (!(button instanceof HTMLElement)) return;
-      
-              const card = button.closest('.card');
-              const extraText = card?.querySelector('.extra-text');
-              const prenotaButton = card?.querySelector('.prenota-button');
-      
-              if (extraText instanceof HTMLElement && prenotaButton instanceof HTMLElement) {
-                extraText.classList.toggle('hidden');
-                prenotaButton.classList.toggle('hidden');
-      
-                // Cambia testo "Leggi di più" / "Nascondi"
-                if (extraText.classList.contains('hidden')) {
-                  button.textContent = 'Leggi di più';
-                } else {
-                  button.textContent = 'Nascondi';
-                }
-              }
-            });
-          });
-        });
-      </script>
+<style>
+  /* Ottimizzazioni globali per prevenire scatti */
+  main {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
 
+  /* Sezioni con isolamento GPU */
+  section {
+    contain: layout style paint;
+    transform: translateZ(0);
+  }
+
+  /* Hero ottimizzato */
+  .hero-quote {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+  }
+
+  .cta-btn {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Galleria: transizione ottimizzata */
+  #gallery-slider {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* FAQ: animazioni leggere */
+  .faq-title {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
+  }
+
+  .faq-item {
+    opacity: 0;
+    animation: fadeInStagger 0.5s ease-out forwards;
+    transform: translateZ(0);
+  }
+
+  .faq-item:nth-child(1) { animation-delay: 0.1s; }
+  .faq-item:nth-child(2) { animation-delay: 0.2s; }
+  .faq-item:nth-child(3) { animation-delay: 0.3s; }
+  .faq-item:nth-child(4) { animation-delay: 0.4s; }
+  .faq-item:nth-child(5) { animation-delay: 0.5s; }
+  .faq-item:nth-child(6) { animation-delay: 0.6s; }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInStagger {
+    from {
+      opacity: 0;
+      transform: translateY(10px) translateZ(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) translateZ(0);
+    }
+  }
+
+  /* Location content animation */
+  .location-content {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+  }
+
+  .gallery-title {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
+  }
+
+  /* Riduce animazioni se l'utente lo preferisce */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<!-- Script slider ottimizzato -->
+<script>
+  function initSlider() {
+    const slider = document.getElementById("gallery-slider");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+
+    if (!slider || !prevBtn || !nextBtn) return;
+
+    const slides = slider.children;
+    let index = 0;
+    let isAnimating = false;
+
+    const updateSlider = () => {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      const offset = index * -100;
+      slider.style.transform = `translateX(${offset}%)`;
+
+      // Reset flag dopo la transizione
+      setTimeout(() => {
+        isAnimating = false;
+      }, 500);
+    };
+
+    nextBtn.addEventListener("click", () => {
+      if (index < slides.length - 1 && !isAnimating) {
+        index++;
+        updateSlider();
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      if (index > 0 && !isAnimating) {
+        index--;
+        updateSlider();
+      }
+    });
+
+    // Preload immagini per evitare scatti
+    Array.from(slides).forEach((slide) => {
+      const img = slide as HTMLImageElement;
+      if (img.loading === 'lazy' && img.complete === false) {
+        img.loading = 'eager';
+      }
+    });
+  }
+
+  // Avvio sicuro
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSlider);
+  } else {
+    initSlider();
+  }
+
+  // Supporto Astro View Transitions
+  document.addEventListener('astro:page-load', initSlider);
+</script>
+
+<!-- Schema.org JSON-LD -->
 <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://laruotadelsamsara.com/",
-        "url": "https://laruotadelsamsara.com/",
-        "name": "Ashtanga Yoga Cagliari – Lezioni Mysore e guidate",
-        "inLanguage": "it-IT",
-        "description": "Ashtanga Yoga Cagliari: pratica Mysore e lezioni guidate per tutti i livelli. Prova gratuita, aperto a tutti. Contattami per prenotare.",
-        "keywords": "ashtanga yoga cagliari, ashtanga cagliari, mysore cagliari, yoga cagliari, yoga dolianova, prova gratuita ashtanga",
-        "about": [
-          { "@type": "Thing", "name": "Ashtanga Yoga" },
-          { "@type": "Thing", "name": "Mysore Style" },
-          { "@type": "Place", "name": "Cagliari" }
-        ],
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://laruotadelsamsara.com/"
-        },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://YOUR_DOMAIN/" },
-            { "@type": "ListItem", "position": 2, "name": "Ashtanga Yoga Cagliari", "item": "https://YOUR_DOMAIN/ashtanga-yoga-cagliari" }
-          ]
-        },
-        "potentialAction": {
-          "@type": "ContactAction",
-          "target": "https://laruotadelsamsara.com/contattami/",
-          "name": "Prenota una prova gratuita"
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://laruotadelsamsara.com/",
+      "url": "https://laruotadelsamsara.com/",
+      "name": "Ashtanga Yoga Cagliari – Lezioni Mysore e guidate",
+      "inLanguage": "it-IT",
+      "description": "Ashtanga Yoga Cagliari: pratica Mysore e lezioni guidate per tutti i livelli. Prova gratuita, aperto a tutti. Contattami per prenotare.",
+      "keywords": "ashtanga yoga cagliari, ashtanga cagliari, mysore cagliari, yoga cagliari, yoga dolianova, prova gratuita ashtanga",
+      "about": [
+        { "@type": "Thing", "name": "Ashtanga Yoga" },
+        { "@type": "Thing", "name": "Mysore Style" },
+        { "@type": "Place", "name": "Cagliari" }
+      ],
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://laruotadelsamsara.com/"
       },
-  
-      {
-        "@type": "Service",
-        "@id": "https://laruotadelsamsara.com/",
-        "name": "Ashtanga Yoga Cagliari – Prova gratuita",
-        "serviceType": "Ashtanga Yoga in Cagliari (Mysore e guidate)",
-        "url": "https://laruotadelsamsara.com/contattami/",
-        "description": "Lezioni di Ashtanga Yoga a Cagliari e Dolianova per tutti i livelli, con possibilità di prova gratuita.",
-        "keywords": "ashtanga yoga cagliari, mysore cagliari, yoga per tutti i livelli",
-        "areaServed": [
-          { "@type": "Place", "name": "Cagliari" },
-          { "@type": "Place", "name": "Dolianova" }
-        ],
-        "audience": { "@type": "Audience", "audienceType": "Tutti i livelli" },
-        "offers": {
-          "@type": "Offer",
-          "category": "free-trial",
-          "price": "0",
-          "priceCurrency": "EUR",
-          "url": "https://laruotadelsamsara.com/contattami/",
-          "description": "Prova gratuita. Aperto a tutti."
-        },
-        "provider": {
-          "@type": "Person",
-          "name": "Francesca",
-          "jobTitle": "Insegnante di Ashtanga Yoga",
-          "areaServed": "Cagliari e Dolianova"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Sedi di pratica",
-          "itemListElement": [
-             {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Place",
-                "name": "Dolianova - WolfGym",
-                "hasMap": "https://maps.app.goo.gl/FhP8UmPCy7CjDnU77"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Place",
-                "name": "Cagliari - Tres Tiempos",
-                "hasMap": "https://maps.app.goo.gl/HYFNzETn31Gtde359"
-              }
-            }
-          ]
-        },
-        "mainEntityOfPage": "https://laruotadelsamsara.com/contattami/"
-      },
-  
-      {
-        "@type": "ItemList",
-        "name": "Benefici dell'Ashtanga Yoga",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Maggiore flessibilità" },
-          { "@type": "ListItem", "position": 2, "name": "Riduzione dello stress" },
-          { "@type": "ListItem", "position": 3, "name": "Forza e consapevolezza" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://laruotadelsamsara.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Ashtanga Yoga Cagliari", "item": "https://laruotadelsamsara.com/" }
         ]
       },
-  
-      {
-        "@type": "FAQPage",
-        "@id": "https://laruotadelsamsara.com/contattami/",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Dove posso praticare Ashtanga Yoga a Cagliari?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "La pratica è disponibile a Cagliari (Tres Tiempos) e a Dolianova (WolfGym). Consulta la pagina Ashtanga Yoga Cagliari o contattami per dettagli e disponibilità."
+      "potentialAction": {
+        "@type": "ContactAction",
+        "target": "https://laruotadelsamsara.com/contattami/",
+        "name": "Prenota una prova gratuita"
+      }
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://laruotadelsamsara.com/",
+      "name": "Ashtanga Yoga Cagliari – Prova gratuita",
+      "serviceType": "Ashtanga Yoga in Cagliari (Mysore e guidate)",
+      "url": "https://laruotadelsamsara.com/contattami/",
+      "description": "Lezioni di Ashtanga Yoga a Cagliari e Dolianova per tutti i livelli, con possibilità di prova gratuita.",
+      "keywords": "ashtanga yoga cagliari, mysore cagliari, yoga per tutti i livelli",
+      "areaServed": [
+        { "@type": "Place", "name": "Cagliari" },
+        { "@type": "Place", "name": "Dolianova" }
+      ],
+      "audience": { "@type": "Audience", "audienceType": "Tutti i livelli" },
+      "offers": {
+        "@type": "Offer",
+        "category": "free-trial",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "url": "https://laruotadelsamsara.com/contattami/",
+        "description": "Prova gratuita. Aperto a tutti."
+      },
+      "provider": {
+        "@type": "Person",
+        "name": "Francesca",
+        "jobTitle": "Insegnante di Ashtanga Yoga",
+        "areaServed": "Cagliari e Dolianova"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sedi di pratica",
+        "itemListElement": [
+           {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Place",
+              "name": "Dolianova - WolfGym",
+              "hasMap": "https://maps.app.goo.gl/FhP8UmPCy7CjDnU77"
             }
           },
           {
-            "@type": "Question",
-            "name": "L'Ashtanga Yoga è adatto ai principianti?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sì. Le lezioni sono aperte a tutti i livelli: lo stile Mysore permette a ciascuno di procedere secondo i propri tempi, con assistenza individuale dell'insegnante."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Come prenoto una prova gratuita di Ashtanga Yoga a Cagliari?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Per prenotare la prova gratuita clicca su 'Prenota una prova' o visita la pagina Contattami e invia una richiesta: riceverai una risposta rapida con tutte le informazioni."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Quali sono i benefici principali dell'Ashtanga Yoga?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Migliora flessibilità, forza e concentrazione; riduce lo stress grazie alla sincronizzazione di respiro e movimento e a una pratica costante e progressiva."
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Place",
+              "name": "Cagliari - Tres Tiempos",
+              "hasMap": "https://maps.app.goo.gl/HYFNzETn31Gtde359"
             }
           }
         ]
       },
-  
-      {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "url": "https://laruotadelsamsara.com/contattami/",
-        "availableLanguage": ["it", "en"]
-      }
-    ]
-  }
-  </script>
-  
-      
-        
+      "mainEntityOfPage": "https://laruotadelsamsara.com/contattami/"
+    },
 
+    {
+      "@type": "ItemList",
+      "name": "Benefici dell'Ashtanga Yoga",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Maggiore flessibilità" },
+        { "@type": "ListItem", "position": 2, "name": "Riduzione dello stress" },
+        { "@type": "ListItem", "position": 3, "name": "Forza e consapevolezza" }
+      ]
+    },
 
-  </main>
-</Layout>
+    {
+      "@type": "FAQPage",
+      "@id": "https://laruotadelsamsara.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Dove posso praticare Ashtanga Yoga a Cagliari?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La pratica è disponibile a Cagliari (Tres Tiempos) e a Dolianova (WolfGym). Consulta la pagina Ashtanga Yoga Cagliari o contattami per dettagli e disponibilità."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "L'Ashtanga Yoga è adatto ai principianti?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. Le lezioni sono aperte a tutti i livelli: lo stile Mysore permette a ciascuno di procedere secondo i propri tempi, con assistenza individuale dell'insegnante."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Come prenoto una prova gratuita di Ashtanga Yoga a Cagliari?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Per prenotare la prova gratuita clicca su 'Prenota una prova' o visita la pagina Contattami e invia una richiesta: riceverai una risposta rapida con tutte le informazioni."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quali sono i benefici principali dell'Ashtanga Yoga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Migliora flessibilità, forza e concentrazione; riduce lo stress grazie alla sincronizzazione di respiro e movimento e a una pratica costante e progressiva."
+          }
+        }
+      ]
+    },
+
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "url": "https://laruotadelsamsara.com/contattami/",
+      "availableLanguage": ["it", "en"]
+    }
+  ]
+}
+</script>

@@ -1,11 +1,10 @@
 ---
 /**
- * AshtangaBenefits.astro – componente, no-props
- * - Toggle "Leggi di più" nativo (details/summary) → niente JS per il pulsante
- * - GSAP + ScrollTrigger via CDN, animazioni come prima (mobile sì, desktop soft)
- * - 3 card statiche
+ * AshtangaBenefits.astro – "Magnetic Reveal" Animation
+ * - Effetto 3D profondo con blur progressivo
+ * - Movimento fluido multi-asse
+ * - Nessuno scatto, tutto smooth
  */
-
 const SECTION_ID = "benefici";
 const TITLE = "Benefici";
 ---
@@ -18,68 +17,119 @@ const TITLE = "Benefici";
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
     <!-- Card 1 -->
-    <article class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-      <iconify-icon icon="mdi:meditation" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
-      <h3 class="text-lg font-bold mb-2">Maggiore Flessibilità</h3>
-      <p class="text-sm mb-2">
-        L'Ashtanga Yoga aumenta la flessibilità attraverso sequenze dinamiche che allungano e rafforzano i muscoli in modo coordinato con il respiro.
+    <article
+      class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+    >
+      <div class="card-icon">
+        <iconify-icon
+          icon="mdi:meditation"
+          width="48"
+          height="48"
+          class="text-emerald-500 mb-4"
+        ></iconify-icon>
+      </div>
+      <h3 class="card-title text-lg font-bold mb-2">Maggiore Flessibilità</h3>
+      <p class="card-text text-sm mb-2">
+        L'Ashtanga Yoga aumenta la flessibilità attraverso sequenze dinamiche
+        che allungano e rafforzano i muscoli in modo coordinato con il respiro.
       </p>
 
-      <!-- Toggle nativo: nessun JS -->
       <details class="expand mt-2 text-center">
-        <summary class="cursor-pointer inline-flex items-center gap-1 font-semibold text-sm text-emerald-700 underline underline-offset-2 rounded-md px-1">
+        <summary
+          class="cursor-pointer inline-flex items-center gap-1 font-semibold text-sm text-emerald-700 underline underline-offset-2 rounded-md px-1"
+        >
           <span class="label-open">Leggi di più</span>
           <span class="label-close hidden">Nascondi</span>
         </summary>
         <div class="content mt-2 grid gap-2 justify-items-center">
           <p class="text-sm">
-            La pratica regolare scioglie gradualmente le tensioni e migliora la mobilità articolare, portando a una maggiore elasticità del corpo.
+            La pratica regolare scioglie gradualmente le tensioni e migliora la
+            mobilità articolare, portando a una maggiore elasticità del corpo.
           </p>
-          <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">Scrivimi</a>
+          <a
+            href="/contattami"
+            class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition"
+            >Scrivimi</a
+          >
         </div>
       </details>
     </article>
 
     <!-- Card 2 -->
-    <article class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-      <iconify-icon icon="mdi:flower" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
-      <h3 class="text-lg font-bold mb-2">Riduzione dello Stress</h3>
-      <p class="text-sm mb-2">
-        L'Ashtanga Yoga calma la mente attraverso la sincronizzazione di respiro e movimento, allontanando lo stress.
+    <article
+      class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+    >
+      <div class="card-icon">
+        <iconify-icon
+          icon="mdi:flower"
+          width="48"
+          height="48"
+          class="text-emerald-500 mb-4"
+        ></iconify-icon>
+      </div>
+      <h3 class="card-title text-lg font-bold mb-2">Riduzione dello Stress</h3>
+      <p class="card-text text-sm mb-2">
+        L'Ashtanga Yoga calma la mente attraverso la sincronizzazione di
+        respiro e movimento, allontanando lo stress.
       </p>
 
       <details class="expand mt-2 text-center">
-        <summary class="cursor-pointer inline-flex items-center gap-1 font-semibold text-sm text-emerald-700 underline underline-offset-2 rounded-md px-1">
+        <summary
+          class="cursor-pointer inline-flex items-center gap-1 font-semibold text-sm text-emerald-700 underline underline-offset-2 rounded-md px-1"
+        >
           <span class="label-open">Leggi di più</span>
           <span class="label-close hidden">Nascondi</span>
         </summary>
         <div class="content mt-2 grid gap-2 justify-items-center">
           <p class="text-sm">
-            La pratica costante e impegnativa delle sequenze allena la concentrazione e la presenza mentale, migliorando l'attenzione nella quotidianità.
+            La pratica costante e impegnativa delle sequenze allena la
+            concentrazione e la presenza mentale, migliorando l'attenzione nella
+            quotidianità.
           </p>
-          <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">Scrivimi</a>
+          <a
+            href="/contattami"
+            class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition"
+            >Scrivimi</a
+          >
         </div>
       </details>
     </article>
 
     <!-- Card 3 -->
-    <article class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
-      <iconify-icon icon="mdi:arm-flex-outline" width="48" height="48" class="text-emerald-500 mb-4"></iconify-icon>
-      <h3 class="text-lg font-bold mb-2">Forza e Consapevolezza</h3>
-      <p class="text-sm mb-2">
-        L'Ashtanga Yoga rafforza il corpo con posture impegnative che richiedono stabilità e controllo.
+    <article
+      class="card bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+    >
+      <div class="card-icon">
+        <iconify-icon
+          icon="mdi:arm-flex-outline"
+          width="48"
+          height="48"
+          class="text-emerald-500 mb-4"
+        ></iconify-icon>
+      </div>
+      <h3 class="card-title text-lg font-bold mb-2">Forza e Consapevolezza</h3>
+      <p class="card-text text-sm mb-2">
+        L'Ashtanga Yoga rafforza il corpo con posture impegnative che
+        richiedono stabilità e controllo.
       </p>
 
       <details class="expand mt-2 text-center">
-        <summary class="cursor-pointer inline-flex items-center gap-1 font-semibold text-sm text-emerald-700 underline underline-offset-2 rounded-md px-1">
+        <summary
+          class="cursor-pointer inline-flex items-center gap-1 font-semibold text-sm text-emerald-700 underline underline-offset-2 rounded-md px-1"
+        >
           <span class="label-open">Leggi di più</span>
           <span class="label-close hidden">Nascondi</span>
         </summary>
         <div class="content mt-2 grid gap-2 justify-items-center">
           <p class="text-sm">
-            Le transizioni fluide sviluppano forza funzionale, resistenza e controllo muscolare consapevole in tutto il corpo.
+            Le transizioni fluide sviluppano forza funzionale, resistenza e
+            controllo muscolare consapevole in tutto il corpo.
           </p>
-          <a href="/contattami" class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition">Scrivimi</a>
+          <a
+            href="/contattami"
+            class="bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-4 py-2 rounded-full transition"
+            >Scrivimi</a
+          >
         </div>
       </details>
     </article>
@@ -87,34 +137,74 @@ const TITLE = "Benefici";
 </section>
 
 <style is:global>
-  /* Label “Leggi di più / Nascondi” via CSS */
-  .expand > summary::-webkit-details-marker { display: none; }
-  .expand[open] > summary .label-open { display: none; }
-  .expand[open] > summary .label-close { display: inline; }
-  .expand:not([open]) > summary .label-close { display: none; }
+  /* Label "Leggi di più / Nascondi" via CSS */
+  .expand > summary::-webkit-details-marker {
+    display: none;
+  }
+  .expand[open] > summary .label-open {
+    display: none;
+  }
+  .expand[open] > summary .label-close {
+    display: inline;
+  }
+  .expand:not([open]) > summary .label-close {
+    display: none;
+  }
 
   /* Anti-overlay: i controlli devono ricevere i click */
-  #benefici .card { position: relative; transform-style: preserve-3d; backface-visibility: hidden; }
-  #benefici .card summary, #benefici .card a { position: relative; z-index: 20; pointer-events: auto; }
-  .gsap-pin-spacer, .pin-spacer { pointer-events: none !important; }
-  #benefici [data-overlay], #benefici::before, #benefici::after { pointer-events: none; }
+  #benefici .card {
+    position: relative;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    /* Force GPU acceleration and prevent layout shifts */
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+  
+  /* Prevent layout shift durante animazioni */
+  #benefici {
+    overflow: hidden;
+  }
+  
+  #benefici .grid {
+    min-height: 400px; /* Prevent collapse during animation */
+  }
+  #benefici .card summary,
+  #benefici .card a {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+  }
+  .gsap-pin-spacer,
+  .pin-spacer {
+    pointer-events: none !important;
+  }
+  #benefici [data-overlay],
+  #benefici::before,
+  #benefici::after {
+    pointer-events: none;
+  }
 </style>
 
-<!-- Iconify (solo se non già incluso globalmente) -->
-<script is:inline src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<!-- Iconify -->
+<script
+  is:inline
+  src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
+></script>
 
-<!-- GSAP animazioni (come prima), isolate dal toggle -->
+<!-- GSAP Magnetic Reveal Animation -->
 <script is:inline>
   const DEBUG_SCROLL = false;
 
   function ensureGSAP() {
     return new Promise((resolve, reject) => {
       if (window.gsap && window.ScrollTrigger) return resolve();
-      const s1 = document.createElement('script');
-      s1.src = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
+      const s1 = document.createElement("script");
+      s1.src = "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js";
       s1.onload = () => {
-        const s2 = document.createElement('script');
-        s2.src = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js';
+        const s2 = document.createElement("script");
+        s2.src =
+          "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js";
         s2.onload = resolve;
         s2.onerror = reject;
         document.head.appendChild(s2);
@@ -125,7 +215,7 @@ const TITLE = "Benefici";
   }
 
   const bootAnim = async () => {
-    const section = document.getElementById('benefici');
+    const section = document.getElementById("benefici");
     if (!section) return;
 
     try {
@@ -133,83 +223,321 @@ const TITLE = "Benefici";
       const { gsap, ScrollTrigger } = window;
       gsap.registerPlugin(ScrollTrigger);
 
-      const titleEl = section.querySelector('h2');
-      const cards = section.querySelectorAll('.card');
+      const titleEl = section.querySelector("h2");
+      const cards = section.querySelectorAll(".card");
 
-      // Stato iniziale come prima
-      if (titleEl) gsap.set(titleEl, { opacity: 0, willChange: 'transform, opacity' });
-      cards.forEach((c) => gsap.set(c, { opacity: 0, willChange: 'transform, opacity, filter' }));
+      // Stati iniziali con force3D per evitare scatti
+      if (titleEl)
+        gsap.set(titleEl, { 
+          opacity: 0, 
+          force3D: true,
+          willChange: "transform, opacity" 
+        });
+      cards.forEach((c) =>
+        gsap.set(c, {
+          opacity: 0,
+          force3D: true,
+          willChange: "transform, opacity, filter",
+        })
+      );
 
-      // Reveal mask titolo (come prima)
+      // ========================================
+      // TITOLO: Magnetic Float In
+      // ========================================
       const runTitle = (startVal) => {
         if (!titleEl) return;
-        gsap.set(titleEl, { clipPath: 'inset(0 0 100% 0)' });
-        gsap.to(titleEl, {
-          clipPath: 'inset(0 0 0% 0)', duration: 0.9, ease: 'power3.out',
-          scrollTrigger: { trigger: titleEl, start: startVal, markers: DEBUG_SCROLL, once: true }
-        });
-        gsap.fromTo(titleEl, { opacity: 0, y: 20 }, {
-          opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
-          scrollTrigger: { trigger: titleEl, start: startVal, markers: DEBUG_SCROLL, once: true }
-        });
-      };
 
-      // “Paper fold” su mobile (rotationX) come prima
-      const runCardsMobile = (startVal) => {
-        cards.forEach((card, i) => {
-          gsap.fromTo(card,
-            { opacity: 0, rotationX: -65, y: 24, transformPerspective: 800, transformOrigin: '50% 0%', boxShadow: '0 0 0 rgba(0,0,0,0)' },
-            {
-              opacity: 1, rotationX: 0, y: 0, duration: 0.6, ease: 'power3.out', delay: i * 0.07,
-              boxShadow: '0 12px 20px rgba(0,0,0,0.08)',
-              scrollTrigger: { trigger: card, start: startVal, markers: DEBUG_SCROLL, once: true }
-            }
-          );
-        });
-      };
-
-      // Desktop: animazione soft (fade/slide), se preferisci ZERO animazioni basta killare come facevamo
-      const runCardsDesktop = (startVal) => {
-        gsap.fromTo(cards,
-          { opacity: 0, y: 18 },
+        // Effetto magnetico con scale e blur
+        gsap.fromTo(
+          titleEl,
           {
-            opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1,
-            scrollTrigger: { trigger: section, start: startVal, markers: DEBUG_SCROLL, once: true }
+            opacity: 0,
+            scale: 0.85,
+            y: 40,
+            rotationX: 15,
+            filter: "blur(8px)",
+            transformPerspective: 1000,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            rotationX: 0,
+            filter: "blur(0px)",
+            duration: 1.2,
+            ease: "power3.out",
+            force3D: true,
+            scrollTrigger: {
+              trigger: titleEl,
+              start: startVal,
+              markers: DEBUG_SCROLL,
+              once: true,
+              fastScrollEnd: true,
+              preventOverlaps: true,
+            },
           }
         );
       };
 
+      // ========================================
+      // MOBILE: Magnetic Reveal con profondità
+      // ========================================
+      const runCardsMobile = (startVal) => {
+        cards.forEach((card, i) => {
+          const icon = card.querySelector(".card-icon");
+          const title = card.querySelector(".card-title");
+          const text = card.querySelector(".card-text");
+
+          // Card principale: emerge con effetto magnetico 3D
+          gsap.fromTo(
+            card,
+            {
+              opacity: 0,
+              scale: 0.88,
+              rotationY: -25,
+              rotationX: 15,
+              x: -30,
+              y: 50,
+              z: -100,
+              filter: "blur(12px)",
+              transformPerspective: 1200,
+              transformOrigin: "center center",
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              rotationY: 0,
+              rotationX: 0,
+              x: 0,
+              y: 0,
+              z: 0,
+              filter: "blur(0px)",
+              duration: 1.1,
+              ease: "power3.out",
+              delay: i * 0.15,
+              force3D: true,
+              scrollTrigger: {
+                trigger: card,
+                start: startVal,
+                markers: DEBUG_SCROLL,
+                once: true,
+                fastScrollEnd: true,
+                preventOverlaps: true,
+              },
+            }
+          );
+
+          // Icona: parallax leggero
+          if (icon) {
+            gsap.fromTo(
+              icon,
+              { opacity: 0, scale: 0.6, y: 20 },
+              {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "back.out(1.4)",
+                delay: i * 0.15 + 0.2,
+                scrollTrigger: {
+                  trigger: card,
+                  start: startVal,
+                  markers: DEBUG_SCROLL,
+                  once: true,
+                },
+              }
+            );
+          }
+
+          // Testo: fade staggerato
+          if (title) {
+            gsap.fromTo(
+              title,
+              { opacity: 0, y: 15 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                delay: i * 0.15 + 0.3,
+                scrollTrigger: {
+                  trigger: card,
+                  start: startVal,
+                  markers: DEBUG_SCROLL,
+                  once: true,
+                },
+              }
+            );
+          }
+
+          if (text) {
+            gsap.fromTo(
+              text,
+              { opacity: 0, y: 10 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: "power2.out",
+                delay: i * 0.15 + 0.4,
+                scrollTrigger: {
+                  trigger: card,
+                  start: startVal,
+                  markers: DEBUG_SCROLL,
+                  once: true,
+                },
+              }
+            );
+          }
+        });
+      };
+
+      // ========================================
+      // DESKTOP: Magnetic Wave più sofisticato
+      // ========================================
+      const runCardsDesktop = (startVal) => {
+        cards.forEach((card, i) => {
+          const icon = card.querySelector(".card-icon");
+          const title = card.querySelector(".card-title");
+          const text = card.querySelector(".card-text");
+
+          // Card: movimento fluido multi-asse con blur
+          gsap.fromTo(
+            card,
+            {
+              opacity: 0,
+              scale: 0.92,
+              rotationY: i % 2 === 0 ? -18 : 18, // Alternato
+              y: 60,
+              z: -80,
+              filter: "blur(10px)",
+              transformPerspective: 1000,
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              rotationY: 0,
+              y: 0,
+              z: 0,
+              filter: "blur(0px)",
+              duration: 1,
+              ease: "power3.out",
+              delay: i * 0.12,
+              force3D: true,
+              scrollTrigger: {
+                trigger: section,
+                start: startVal,
+                markers: DEBUG_SCROLL,
+                once: true,
+                fastScrollEnd: true,
+                preventOverlaps: true,
+              },
+            }
+          );
+
+          // Icona: bounce elegante
+          if (icon) {
+            gsap.fromTo(
+              icon,
+              { opacity: 0, scale: 0.5, rotation: -15 },
+              {
+                opacity: 1,
+                scale: 1,
+                rotation: 0,
+                duration: 0.9,
+                ease: "back.out(1.7)",
+                delay: i * 0.12 + 0.15,
+                scrollTrigger: {
+                  trigger: section,
+                  start: startVal,
+                  markers: DEBUG_SCROLL,
+                  once: true,
+                },
+              }
+            );
+          }
+
+          // Testo: cascade
+          [title, text].forEach((el, idx) => {
+            if (el) {
+              gsap.fromTo(
+                el,
+                { opacity: 0, x: -10 },
+                {
+                  opacity: 1,
+                  x: 0,
+                  duration: 0.6,
+                  ease: "power2.out",
+                  delay: i * 0.12 + 0.25 + idx * 0.08,
+                  scrollTrigger: {
+                    trigger: section,
+                    start: startVal,
+                    markers: DEBUG_SCROLL,
+                    once: true,
+                  },
+                }
+              );
+            }
+          });
+        });
+      };
+
+      // ========================================
+      // Media Queries
+      // ========================================
       const mm = gsap.matchMedia();
-      mm.add('(max-width: 767px)', () => {
-        runTitle('top 92%');
-        runCardsMobile('top 95%');
-      });
-      mm.add('(min-width: 768px)', () => {
-        runTitle('top 85%');
-        runCardsDesktop('top 88%');
+
+      mm.add("(max-width: 767px)", () => {
+        runTitle("top 92%");
+        runCardsMobile("top 95%");
       });
 
-      // Ricalcolo
-      window.addEventListener('load', () => ScrollTrigger.refresh());
+      mm.add("(min-width: 768px)", () => {
+        runTitle("top 85%");
+        runCardsDesktop("top 88%");
+      });
 
-      // Reduced-motion
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // Refresh dopo load - DEBOUNCED per evitare scatti
+      let refreshTimeout;
+      window.addEventListener("load", () => {
+        clearTimeout(refreshTimeout);
+        refreshTimeout = setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 100);
+      });
+      
+      // Smoother scroll handling
+      ScrollTrigger.config({
+        limitCallbacks: true,
+        syncInterval: 150,
+      });
+
+      // Rispetta reduced-motion
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         ScrollTrigger.getAll().forEach((st) => st.disable());
-        if (titleEl) gsap.set(titleEl, { clearProps: 'all', opacity: 1 });
-        cards.forEach((c) => gsap.set(c, { clearProps: 'all', opacity: 1 }));
+        if (titleEl) gsap.set(titleEl, { clearProps: "all", opacity: 1 });
+        cards.forEach((c) => gsap.set(c, { clearProps: "all", opacity: 1 }));
       }
     } catch (_) {
-      // Se GSAP non carica, UI e toggle restano ok
+      // Fallback senza animazioni
     }
   };
 
-  // Avvio sicuro in ogni scenario (Astro incluso)
-  const start = () => { try { bootAnim(); } catch (e) { console.error(e); } };
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', start, { once: true });
+  // Avvio sicuro
+  const start = () => {
+    try {
+      bootAnim();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start, { once: true });
   } else {
     start();
   }
-  document.addEventListener('astro:page-load', start);
-  document.addEventListener('astro:after-swap', start);
+
+  document.addEventListener("astro:page-load", start);
+  document.addEventListener("astro:after-swap", start);
 </script>
