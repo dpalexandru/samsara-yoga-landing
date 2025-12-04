@@ -4,66 +4,265 @@ import "../styles/global.css";
 ---
 
 <Layout>
-  <main class="flex flex-col items-center py-12 px-6 max-w-4xl mx-auto">
+  <main class="flex flex-col overflow-hidden">
 
-    <!-- Titolo -->
-    <h1 class="text-4xl font-bold text-emerald-700 mb-0,5 text-center">Su di me</h1>
-
-    <!-- Contenitore del testo -->
-    <section class="bg-white rounded-lg shadow-lg p-8 text-gray-800 space-y-6 leading-relaxed text-center">
-
-      <p>
-        Ho fatto il liceo classico e poi ho frequentato l'università dedicandomi a studi scientifici, che hanno cambiato il mio modo di essere, rendendomi maggiormente razionale e distaccata verso le mie emozioni. Era come se avessi perso la bambina sognatrice di qualche anno prima.      </p>
-
-      <p>
-        Ricordo che ho passato anni cercando me stessa, cercando di ritrovarmi, cercando di ritrovare quella libertà e quella magia che avevo relegato, dimenticato, soffocato. Il soffocare quella bambina è stato poi causa, purtroppo, di un lungo periodo, durato anni, di attacchi di panico e forte ansia.      </p>
-      <img 
-      src="/img/gallery2.jpg" 
-      alt="Immagine di Francesca"
-      class="w-full max-w-sm mx-auto rounded-lg shadow object-cover"
-    />
-    
-          <p>
-            Ho conosciuto l'Ashtanga Yoga alla fine del 2017. Ricordo benissimo la sensazione che mi lasciò il mio primo giorno di pratica: il mio corpo disteso sul tappetino durante la fase di rilassamento e quella sensazione di profonda libertà che invadeva tutto il mio corpo.      </p>
-
-      <p>
-        In quell'ora e un quarto avevo dimenticato tutta la mia vita, tutti i miei problemi, tutta la mia ansia e la mia agitazione per il presente e il futuro. In quella prima lezione di Ashtanga Yoga io avevo ritrovato la bambina che avevo perso in precedenza.      </p>
-
-      <p>
-        Fu per me il connubio perfetto che mi riportò ad una dimensione spirituale che avevo perduto. Ho incominciato a fare i miei primi aggiustamenti con l'insegnante di allora e pensai che mi sarebbe piaciuto poter condividere, dopo più di due anni, quello che era diventato per me lo yoga.
-
-      <p>
-        Fu per me il connubio perfetto che mi riportò ad una dimensione spirituale che avevo perduto. Ho incominciato a fare i miei primi aggiustamenti con l'insegnante di allora e pensai che mi sarebbe piaciuto poter condividere, dopo più di due anni, quello che era diventato per me lo yoga.
-      </p>
-
-      <p>
-        Durante il periodo del Covid, ho conseguito un certificato di insegnante di yoga per bambini e poi, successivamente, ho intrapreso la mia formazione come insegnante di Ashtanga Yoga (250 h + 150 h) presso La Yoga Shala di Milano con Elena De Martin (insegnante autorizzata II livello da Sri K. Pattabhi Jois*).      </p>
-      <img 
-      src="/img/gallery3.jpg" 
-      alt="Immagine di Francesca"
-      class="w-full max-w-sm mx-auto rounded-lg shadow object-cover"
-    />
-      <p>
-        Attualmente insegno, ma resto prima di ogni cosa una studentessa, in quanto sono fermamente convinta che non si possa insegnare senza avere una guida che ci mantenga umili e che ci ricordi che abbiamo sempre da imparare.      </p>
-
-      <p class="text-sm italic text-gray-500">
-        *Sri K. Pattabhi Jois è considerato il padre fondatore dell'Ashtanga Yoga.
-      </p>
-
+    <!-- Hero Section -->
+    <section class="relative h-[50vh] md:h-[60vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 via-indigo-50 to-yellow-50"></div>
+      
+      <div class="relative z-10 text-center px-6 max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-bold text-emerald-800 mb-4 fade-in-up">
+          Francesca
+        </h1>
+        <p class="text-xl md:text-2xl text-indigo-700 font-light fade-in-up-delay">
+          Insegnante di Ashtanga Yoga a Cagliari
+        </p>
+      </div>
     </section>
 
-    <!-- Call to Action finale -->
-    <section class="text-center mt-10">
-      <p class="text-lg text-gray-700 mb-6">
-        Sei pronto a trasformare la tua vita? Prenota una prova di Ashtanga Yoga a Cagliari e scopri come la pratica possa rinnovare corpo e mente.
-      </p>
-      <a 
-        href="/contatti"
-        class="inline-block bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-6 py-3 rounded-full transition"
-      >
-        Scrivimi
-      </a>
+    <!-- Main Content -->
+    <section class="py-16 px-6 bg-white">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- Intro con immagine -->
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+          <div class="order-2 md:order-1 space-y-6 text-gray-700 leading-relaxed content-fade">
+            <p>
+              Ho fatto il liceo classico e poi ho frequentato l'università dedicandomi a studi scientifici, che hanno cambiato il mio modo di essere, rendendomi maggiormente razionale e distaccata verso le mie emozioni. Era come se avessi perso la bambina sognatrice di qualche anno prima.
+            </p>
+
+            <p>
+              Ricordo che ho passato anni cercando me stessa, cercando di ritrovarmi, cercando di ritrovare quella libertà e quella magia che avevo relegato, dimenticato, soffocato. Il soffocare quella bambina è stato poi causa, purtroppo, di un lungo periodo, durato anni, di attacchi di panico e forte ansia.
+            </p>
+          </div>
+
+          <div class="order-1 md:order-2">
+            <img 
+              src="/img/gallery2.jpg" 
+              alt="Francesca - Insegnante Ashtanga Yoga Cagliari"
+              class="w-full rounded-2xl shadow-2xl object-cover h-[400px] image-fade hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        <!-- La scoperta dello Yoga -->
+        <div class="bg-gradient-to-br from-emerald-50 to-indigo-50 rounded-3xl p-8 md:p-12 mb-12 content-fade-delay">
+          <h2 class="text-3xl font-bold text-emerald-700 mb-6 text-center">
+            La scoperta dell'Ashtanga Yoga
+          </h2>
+          
+          <div class="space-y-6 text-gray-700 leading-relaxed">
+            <p>
+              Ho conosciuto l'Ashtanga Yoga alla fine del 2017. Ricordo benissimo la sensazione che mi lasciò il mio primo giorno di pratica: il mio corpo disteso sul tappetino durante la fase di rilassamento e quella sensazione di profonda libertà che invadeva tutto il mio corpo.
+            </p>
+
+            <p>
+              In quell'ora e un quarto avevo dimenticato tutta la mia vita, tutti i miei problemi, tutta la mia ansia e la mia agitazione per il presente e il futuro. In quella prima lezione di Ashtanga Yoga io avevo ritrovato la bambina che avevo perso in precedenza.
+            </p>
+
+            <p>
+              Fu per me il connubio perfetto che mi riportò ad una dimensione spirituale che avevo perduto. Ho incominciato a fare i miei primi aggiustamenti con l'insegnante di allora e pensai che mi sarebbe piaciuto poter condividere, dopo più di due anni, quello che era diventato per me lo yoga.
+            </p>
+          </div>
+        </div>
+
+        <!-- Formazione con immagine -->
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+          <div>
+            <img 
+              src="/img/gallery3.jpg" 
+              alt="Formazione yoga Cagliari"
+              class="w-full rounded-2xl shadow-2xl object-cover h-[400px] image-fade-delay hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <div class="space-y-6 text-gray-700 leading-relaxed content-fade-delay-2">
+            <h2 class="text-3xl font-bold text-emerald-700 mb-4">
+              Il percorso formativo
+            </h2>
+            
+            <p>
+              Durante il periodo del Covid, ho conseguito un certificato di insegnante di yoga per bambini e poi, successivamente, ho intrapreso la mia formazione come insegnante di Ashtanga Yoga (250 h + 150 h) presso La Yoga Shala di Milano con Elena De Martin (insegnante autorizzata II livello da Sri K. Pattabhi Jois*).
+            </p>
+
+            <p>
+              Attualmente insegno, ma resto prima di ogni cosa una studentessa, in quanto sono fermamente convinta che non si possa insegnare senza avere una guida che ci mantenga umili e che ci ricordi che abbiamo sempre da imparare.
+            </p>
+
+            <p class="text-sm italic text-gray-500 pt-4 border-t border-gray-200">
+              *Sri K. Pattabhi Jois è considerato il padre fondatore dell'Ashtanga Yoga.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quote Section -->
+        <div class="bg-indigo-900 text-white rounded-3xl p-8 md:p-12 text-center my-16 quote-fade">
+          <blockquote class="text-2xl md:text-3xl font-light italic mb-4">
+            "Non si può insegnare senza rimanere studenti"
+          </blockquote>
+          <p class="text-indigo-200">— Filosofia della pratica Ashtanga</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-gradient-to-br from-yellow-50 via-emerald-50 to-indigo-50">
+      <div class="max-w-3xl mx-auto text-center cta-fade">
+        <h2 class="text-3xl md:text-4xl font-bold text-emerald-800 mb-6">
+          Inizia il tuo percorso di trasformazione
+        </h2>
+        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+          Sei pronto a trasformare la tua vita? Prenota una prova di Ashtanga Yoga a Cagliari e scopri come la pratica possa rinnovare corpo e mente.
+        </p>
+        <a 
+          href="/contattami"
+          class="inline-flex items-center gap-2 bg-yellow-300 hover:bg-yellow-400 text-indigo-900 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V6a2 2 0 00-2-2H3a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          Scrivimi per una prova gratuita
+        </a>
+      </div>
     </section>
 
   </main>
 </Layout>
+
+<style>
+  /* Animazioni ottimizzate */
+  .fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+  }
+
+  .fade-in-up-delay {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+  }
+
+  .content-fade {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.3s forwards;
+  }
+
+  .content-fade-delay {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+  }
+
+  .content-fade-delay-2 {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.7s forwards;
+  }
+
+  .image-fade {
+    opacity: 0;
+    animation: fadeInScale 1s ease-out 0.4s forwards;
+  }
+
+  .image-fade-delay {
+    opacity: 0;
+    animation: fadeInScale 1s ease-out 0.6s forwards;
+  }
+
+  .quote-fade {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.8s forwards;
+  }
+
+  .cta-fade {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Riduce animazioni se preferito */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<!-- Schema.org per SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Francesca",
+  "jobTitle": "Insegnante di Ashtanga Yoga",
+  "description": "Insegnante certificata di Ashtanga Yoga a Cagliari con formazione presso La Yoga Shala di Milano (250h + 150h). Specializzata in yoga per adulti e bambini.",
+  "knowsAbout": [
+    "Ashtanga Yoga",
+    "Mysore Style",
+    "Yoga per bambini",
+    "Vinyasa"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Teacher Training",
+      "educationalLevel": "250h + 150h",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "La Yoga Shala Milano"
+      }
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cagliari",
+    "addressRegion": "Sardegna",
+    "addressCountry": "IT"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Cagliari"
+    },
+    {
+      "@type": "City",
+      "name": "Dolianova"
+    }
+  ],
+  "knowsLanguage": ["it", "en"],
+  "url": "https://laruotadelsamsara.com/chi-sono"
+}
+</script>
