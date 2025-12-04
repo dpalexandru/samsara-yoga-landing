@@ -4,33 +4,40 @@ import "../styles/global.css";
 ---
 
 <Layout>
-  <main class="flex flex-col gap-10 py-10 px-4 max-w-6xl mx-auto">
+  <main class="flex flex-col overflow-hidden">
 
-    <!-- Sezione Introduzione -->
-    <section class="text-center px-6 py-2">
-      <h1 class="text-3xl md:text-4xl font-bold text-emerald-800">
-        Ashtanga Yoga Cagliari
-      </h1>
-    
-      <p class="mt-3 text-gray-700 max-w-xl mx-auto">
-        Contattaci per fissare la tua lezione di prova: pratica adatta a tutti i livelli.
-      </p>
-    
-      <!-- Badge minimal -->
-      <div class="mt-4 flex flex-wrap items-center justify-center gap-2">
-        <span class="inline-block rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-700 border border-emerald-200">
-          ✅ Prova gratuita
-        </span>
-        <span class="inline-block rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-700 border border-emerald-200">
-          🌿 Aperto a tutti
-        </span>
-      </div>
-    
-      <!-- CTA minimal -->
-      <div class="mt-6">
-        <a href="/contattami"
-           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2 rounded-full shadow-sm transition">
-          <!-- icona busta -->
+    <!-- Hero Section -->
+    <section class="relative py-16 px-6 bg-gradient-to-br from-emerald-100 via-indigo-50 to-yellow-50">
+      <div class="max-w-5xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-emerald-800 mb-6 fade-in-up">
+          Orari e Lezioni di Ashtanga Yoga a Cagliari
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-700 mb-6 fade-in-up-delay max-w-2xl mx-auto leading-relaxed">
+          Contattaci per fissare la tua lezione di prova: pratica adatta a tutti i livelli.
+        </p>
+        
+        <!-- Badge -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-8 fade-in-up-delay-2">
+          <span class="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700 border-2 border-emerald-300 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Prova gratuita
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700 border-2 border-emerald-300 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            Aperto a tutti
+          </span>
+        </div>
+        
+        <!-- CTA -->
+        <a 
+          href="/contattami"
+          class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cta-fade"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V6a2 2 0 00-2-2H3a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -40,307 +47,596 @@ import "../styles/global.css";
       </div>
     </section>
 
-    <!-- Sezione Orari e Palestre -->
-    <section class="flex flex-col gap-10">
+    <!-- Sezioni Location -->
+    <section class="py-16 px-6 bg-white">
+      <div class="max-w-6xl mx-auto space-y-16">
 
-       <!-- Cagliari -->
-       <div class="bg-white shadow-md rounded-lg p-6 texta-center">
-        <h2 class="text-2xl font-bold text-emerald-700 mb-4 flex items-center gap-2">
-          <iconify-icon icon="mdi:map-marker" width="28" class="text-emerald-500 "></iconify-icon> 
-          Uno, Dos, Tres Tiempos
-        </h2>
-        <p class="py-1 text-center">Via delle Cicale, 1, 09134 Cagliari CA</p>
+        <!-- Cagliari - Tres Tiempos -->
+        <div class="location-card">
+          <div class="bg-gradient-to-br from-white to-emerald-50 rounded-3xl shadow-2xl overflow-hidden border border-emerald-100">
+            
+            <!-- Header Location -->
+            <div class="bg-gradient-to-r from-emerald-600 to-emerald-500 p-6 md:p-8">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="bg-white p-3 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-2xl md:text-3xl font-bold text-white">
+                    Uno, Dos, Tres Tiempos
+                  </h2>
+                  <p class="text-emerald-100 text-sm md:text-base">Via delle Cicale, 1, 09134 Cagliari CA</p>
+                </div>
+              </div>
+            </div>
 
-        <div class="overflow-hidden rounded-xl shadow-lg mt-1 mb-4">
-          <img src="/trestiempos_cagliari.jpeg" alt="Uno, Dos, Tres Tiempos" 
-               class="w-full h-64 object-cover transform transition-transform duration-300 hover:scale-105" />
+            <!-- Immagine -->
+            <div class="relative overflow-hidden h-64 md:h-80">
+              <img 
+                src="/trestiempos_cagliari.jpeg" 
+                alt="Ashtanga Yoga Cagliari - Tres Tiempos"
+                class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110"
+              />
+              <div class="absolute bottom-4 left-4">
+                <a 
+                  href="https://maps.app.goo.gl/HYFNzETn31Gtde359" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-2 bg-white hover:bg-yellow-300 text-gray-800 font-semibold px-4 py-2 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  Google Maps
+                </a>
+              </div>
+            </div>
+
+            <!-- Tabella Orari -->
+            <div class="p-6 md:p-8">
+              <h3 class="text-xl font-bold text-emerald-700 mb-4 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Orari delle lezioni
+              </h3>
+              
+              <div class="overflow-x-auto rounded-xl shadow-md">
+                <table class="w-full border-collapse">
+                  <thead>
+                    <tr class="bg-emerald-600 text-white">
+                      <th class="px-4 py-3 text-left font-semibold">Giorno</th>
+                      <th class="px-4 py-3 text-left font-semibold">Orari</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white">
+                    <tr class="border-b border-gray-200 hover:bg-emerald-50 transition-colors">
+                      <td class="px-4 py-3 font-medium text-gray-800">Lunedì</td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center gap-2">
+                          <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Sera</span>
+                          <span class="text-gray-700">16:00 – 18:00</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-emerald-50 transition-colors">
+                      <td class="px-4 py-3 font-medium text-gray-800">Martedì</td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center gap-2">
+                          <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Sera</span>
+                          <span class="text-gray-700">17:15 – 18:00</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-emerald-50 transition-colors">
+                      <td class="px-4 py-3 font-medium text-gray-800">Mercoledì</td>
+                      <td class="px-4 py-3">
+                        <div class="space-y-2">
+                          <div class="flex items-center gap-2">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Mattina</span>
+                            <span class="text-gray-700">09:00 – 11:00</span>
+                          </div>
+                          <div class="flex items-center gap-2">
+                            <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Sera</span>
+                            <span class="text-gray-700">18:00 – 19:30</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-emerald-50 transition-colors">
+                      <td class="px-4 py-3 font-medium text-gray-800">Giovedì</td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center gap-2">
+                          <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Sera</span>
+                          <span class="text-gray-700">17:15 – 18:00</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-emerald-50 transition-colors">
+                      <td class="px-4 py-3 font-medium text-gray-800">Venerdì</td>
+                      <td class="px-4 py-3">
+                        <div class="space-y-2">
+                          <div class="flex items-center gap-2">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Mattina</span>
+                            <span class="text-gray-700">09:00 – 11:00</span>
+                          </div>
+                          <div class="flex items-center gap-2">
+                            <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Sera</span>
+                            <span class="text-gray-700">16:00 – 18:00</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="https://maps.app.goo.gl/HYFNzETn31Gtde359" target="_blank" rel="noopener noreferrer" 
-              class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-lg mb-8">
-            <iconify-icon icon="mdi:map-marker" width="24" class="mr-2 text-red-600"></iconify-icon> 
-            Vedi su Google Maps
-         </a>
-          
 
+        <!-- Dolianova - WolfGym -->
+        <div class="location-card">
+          <div class="bg-gradient-to-br from-white to-indigo-50 rounded-3xl shadow-2xl overflow-hidden border border-indigo-100">
+            
+            <!-- Header Location -->
+            <div class="bg-gradient-to-r from-indigo-600 to-indigo-500 p-6 md:p-8">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="bg-white p-3 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-2xl md:text-3xl font-bold text-white">
+                    Dolianova - WolfGym
+                  </h2>
+                  <p class="text-indigo-100 text-sm md:text-base">Corso Repubblica, 272, 09041 Dolianova CA</p>
+                </div>
+              </div>
+            </div>
 
-          <table class="w-full border border-gray-200 rounded-lg overflow-hidden shadow-md">
-            <thead class="bg-emerald-600 text-white">
-              <tr>
-                <th class="px-2 py-2 text-left">Giorno</th>
-                <th class="px-2 py-2 text-left">Orari</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-              <tr class="hover:bg-emerald-50">
-                <td class="px-2 py-2 font-medium">Lunedì</td>
-                <td class="px-2 py-2">
-                  <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full">Sera</span>
-                  <span class="ml-2">16:00 – 18:00</span>
-                </td>
-              </tr>
-              <tr class="hover:bg-emerald-50">
-                <td class="px-2 py-2 font-medium">Martedì</td>
-                <td class="px-2 py-2">
-                  <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full">Sera</span>
-                  <span class="ml-2">17:15 – 18:00</span>
-                </td>
-              </tr>
-              <tr class="hover:bg-emerald-50">
-                <td class="px-2 py-2 font-medium">Mercoledì</td>
-                <td class="px-2 py-2 space-y-1">
-                  <div>
-                    <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full">Mattina</span>
-                    <span class="ml-2">09:00 – 11:00</span>
-                  </div>
-                  <div>
-                    <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full">Sera</span>
-                    <span class="ml-2">18:00 – 19:30</span>
-                  </div>
-                </td>
-              </tr>
-              <tr class="hover:bg-emerald-50">
-                <td class="px-2 py-2 font-medium">Giovedì</td>
-                <td class="px-2 py-2">
-                  <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full">Sera</span>
-                  <span class="ml-2">17:15 – 18:00</span>
-                </td>
-              </tr>
-              <tr class="hover:bg-emerald-50">
-                <td class="px-2 py-2 font-medium">Venerdì</td>
-                <td class="px-2 py-2 space-y-1">
-                  <div>
-                    <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full">Mattina</span>
-                    <span class="ml-2">09:00 – 11:00</span>
-                  </div>
-                  <div>
-                    <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full">Sera</span>
-                    <span class="ml-2">16:00 – 18:00</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </table>
-      </div>
+            <!-- Immagine -->
+            <div class="relative overflow-hidden h-64 md:h-80">
+              <img 
+                src="/dolianova.jpg" 
+                alt="Yoga Dolianova - WolfGym"
+                class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110"
+              />
+              <div class="absolute bottom-4 left-4">
+                <a 
+                  href="https://maps.app.goo.gl/FhP8UmPCy7CjDnU77" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-2 bg-white hover:bg-yellow-300 text-gray-800 font-semibold px-4 py-2 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  Google Maps
+                </a>
+              </div>
+            </div>
 
-      <!-- Dolianova -->
-      <div class="bg-white shadow-md rounded-lg p-6">
-        <h2 class="text-2xl font-bold text-emerald-700 mb-4 flex items-center gap-2">
-          <iconify-icon icon="mdi:map-marker" width="28" class="text-emerald-500"></iconify-icon> 
-          Dolianova - WolfGym
-        </h2>
-        <span>Corso Repubblica, 272, 09041 Dolianova CA</span>
-
-
-        <div class="overflow-hidden rounded-xl shadow-lg mb-4">
-          <img src="/dolianova.jpg" alt="Wolf Gym ASD" 
-               class="w-full h-64 object-cover transform transition-transform duration-300 hover:scale-105" />
+            <!-- Tabella Orari -->
+            <div class="p-6 md:p-8">
+              <h3 class="text-xl font-bold text-indigo-700 mb-4 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Orari delle lezioni
+              </h3>
+              
+              <div class="overflow-x-auto rounded-xl shadow-md">
+                <table class="w-full border-collapse">
+                  <thead>
+                    <tr class="bg-indigo-600 text-white">
+                      <th class="px-4 py-3 text-left font-semibold">Giorno</th>
+                      <th class="px-4 py-3 text-left font-semibold">Orari</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white">
+                    <tr class="border-b border-gray-200 hover:bg-indigo-50 transition-colors">
+                      <td class="px-4 py-3 font-medium text-gray-800">Lunedì</td>
+                      <td class="px-4 py-3">
+                        <div class="space-y-2">
+                          <div class="flex items-center gap-2">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Mattina</span>
+                            <span class="text-gray-700">09:00 – 10:00</span>
+                          </div>
+                          <div class="flex items-center gap-2">
+                            <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Sera</span>
+                            <span class="text-gray-700">19:30 – 20:30</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-indigo-50 transition-colors">
+                      <td class="px-4 py-3 font-medium text-gray-800">Venerdì</td>
+                      <td class="px-4 py-3">
+                        <div class="space-y-2">
+                          <div class="flex items-center gap-2">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Mattina</span>
+                            <span class="text-gray-700">09:00 – 10:00</span>
+                          </div>
+                          <div class="flex items-center gap-2">
+                            <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">Sera</span>
+                            <span class="text-gray-700">19:30 – 20:30</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
-        <a href="https://maps.app.goo.gl/FhP8UmPCy7CjDnU77" target="_blank" rel="noopener noreferrer" 
-              class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-lg mb-8">
-            <iconify-icon icon="mdi:map-marker" width="24" class="mr-2 text-red-600"></iconify-icon> 
-            Vedi su Google Maps
-         </a>
-          
-         <table class="w-full border border-gray-200 rounded-lg overflow-hidden shadow-md">
-          <thead class="bg-emerald-600 text-white">
-            <tr>
-              <th class="px-4 py-2 text-left">Giorno</th>
-              <th class="px-4 py-2 text-left">Orari</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200">
-            <tr class="hover:bg-emerald-50">
-              <td class="px-4 py-2 font-medium">Lunedì</td>
-              <td class="px-4 py-2 space-y-1">
-                <div>
-                  <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full">Mattina</span>
-                  <span class="ml-2">09:00 – 10:00</span>
-                </div>
-                <div>
-                  <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full">Sera</span>
-                  <span class="ml-2">19:30 – 20:30</span>
-                </div>
-              </td>
-            </tr>
-            <tr class="hover:bg-emerald-50">
-              <td class="px-4 py-2 font-medium">Venerdì</td>
-              <td class="px-4 py-2 space-y-1">
-                <div>
-                  <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full">Mattina</span>
-                  <span class="ml-2">09:00 – 10:00</span>
-                </div>
-                <div>
-                  <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2 py-1 rounded-full">Sera</span>
-                  <span class="ml-2">19:30 – 20:30</span>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+
       </div>
-
-     
-
     </section>
 
-    
-     <!-- Sezione Finale Yoga Bimbi -->
-     <section class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 text-center mt-4 shadow-inner">
-      <h3 class="text-xl font-bold text-emerald-700 mb-2">👶 Yoga per bambini</h3>
-      <p class="text-gray-700 mb-4">Scopri i miei corsi dedicati ai più piccoli.</p>
-      <a href="/yoga-bimbi-cagliari" class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2 rounded-full shadow-md transition duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        Vai alla pagina Yoga Bimbi
-      </a>
+    <!-- Sezione Yoga Bimbi -->
+    <section class="py-16 px-6 bg-gradient-to-br from-yellow-50 via-green-50 to-emerald-50">
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-center border-2 border-green-200 yoga-bimbi-card">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          
+          <h3 class="text-2xl md:text-3xl font-bold text-green-700 mb-4">
+            👶 Yoga per bambini
+          </h3>
+          <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+            Scopri i miei corsi dedicati ai più piccoli.
+          </p>
+          
+          <a 
+            href="/yoga-bimbi-cagliari" 
+            class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Vai alla pagina Yoga Bimbi
+          </a>
+        </div>
+      </div>
     </section>
 
   </main>
 </Layout>
 
-
-<!-- DATI STRUTTURATI -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "name": "Ashtanga Yoga Cagliari",
-        "description": "Contattaci per fissare la tua lezione di prova: pratica adatta a tutti i livelli. Prova gratuita, aperto a tutti.",
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "/trestiempos_cagliari.jpeg"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Ashtanga Yoga Cagliari",
-        "areaServed": {
-          "@type": "Place",
-          "name": "Cagliari, Italy"
-        },
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "All levels"
-        },
-        "isAccessibleForFree": true,
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "EUR",
-          "category": "free-trial",
-          "url": "/contattami",
-          "description": "Prova gratuita. Aperto a tutti."
-        },
-        "provider": {
-          "@type": "Person",
-          "name": "Francesca"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Sedi e orari",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Place",
-                "name": "WolfGym - Dolianova",
-                "image": "/dolianova.jpg",
-                "hasMap": "https://maps.app.goo.gl/FhP8UmPCy7CjDnU77",
-                "openingHoursSpecification": [
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Monday",
-                    "opens": "09:00",
-                    "closes": "10:00"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Monday",
-                    "opens": "19:30",
-                    "closes": "20:30"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Friday",
-                    "opens": "09:00",
-                    "closes": "10:00"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Friday",
-                    "opens": "19:30",
-                    "closes": "20:30"
-                  }
-                ]
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Place",
-                "name": "Uno, Dos, Tres Tiempos - Cagliari",
-                "image": "/trestiempos_cagliari.jpeg",
-                "hasMap": "https://maps.app.goo.gl/HYFNzETn31Gtde359",
-                "openingHoursSpecification": [
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Monday",
-                    "opens": "16:00",
-                    "closes": "18:00"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Tuesday",
-                    "opens": "17:15",
-                    "closes": "18:00"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Wednesday",
-                    "opens": "09:00",
-                    "closes": "11:00"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Wednesday",
-                    "opens": "18:00",
-                    "closes": "19:30"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Thursday",
-                    "opens": "17:15",
-                    "closes": "18:00"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Friday",
-                    "opens": "09:00",
-                    "closes": "11:00"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "https://schema.org/Friday",
-                    "opens": "16:00",
-                    "closes": "18:00"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "url": "/contattami",
-        "availableLanguage": ["it", "en"]
-      }
-    ]
+<style>
+  /* Animazioni */
+  .fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
   }
-  </script>
-  
+
+  .fade-in-up-delay {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  }
+
+  .fade-in-up-delay-2 {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  }
+
+  .cta-fade {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.8s forwards;
+  }
+
+  .location-card {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  .location-card:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+
+  .location-card:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  .yoga-bimbi-card {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.7s forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Riduce animazioni se preferito */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+<script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://laruotadelsamsara.com/orarielezioni",
+      "url": "https://laruotadelsamsara.com/orarielezioni",
+      "name": "Orari e Lezioni Ashtanga Yoga Cagliari e Dolianova",
+      "inLanguage": "it-IT",
+      "description": "Orari completi delle lezioni di Ashtanga Yoga a Cagliari (Tres Tiempos) e Dolianova (WolfGym). Prova gratuita, aperto a tutti i livelli.",
+      "keywords": "orari yoga cagliari, lezioni ashtanga cagliari, yoga dolianova, orari yoga dolianova, ashtanga cagliari orari, mysore cagliari",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://laruotadelsamsara.com/trestiempos_cagliari.jpeg",
+        "caption": "Ashtanga Yoga Cagliari - Tres Tiempos"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://laruotadelsamsara.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Orari e Lezioni",
+            "item": "https://laruotadelsamsara.com/orarielezioni"
+          }
+        ]
+      },
+      "mainEntity": {
+        "@id": "https://laruotadelsamsara.com/orarielezioni#service"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://laruotadelsamsara.com/orarielezioni#service",
+      "name": "Lezioni di Ashtanga Yoga a Cagliari e Dolianova",
+      "serviceType": "Ashtanga Yoga Classes",
+      "description": "Lezioni di Ashtanga Yoga in stile Mysore e guidate per tutti i livelli. Prima lezione gratuita.",
+      "provider": {
+        "@type": "Person",
+        "name": "Francesca",
+        "jobTitle": "Insegnante di Ashtanga Yoga",
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Yoga Teacher Training",
+          "educationalLevel": "250h + 150h",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "La Yoga Shala Milano"
+          }
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Cagliari",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Sardegna"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Dolianova",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "Sardegna"
+          }
+        }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Tutti i livelli - principianti ed esperti"
+      },
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "category": "free-trial",
+        "url": "https://laruotadelsamsara.com/contattami",
+        "description": "Prima lezione di prova gratuita. Aperto a tutti i livelli.",
+        "availability": "https://schema.org/InStock"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sedi e orari delle lezioni",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Place",
+              "@id": "https://laruotadelsamsara.com/orarielezioni#cagliari",
+              "name": "Uno, Dos, Tres Tiempos - Cagliari",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Via delle Cicale, 1",
+                "addressLocality": "Cagliari",
+                "addressRegion": "CA",
+                "postalCode": "09134",
+                "addressCountry": "IT"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "39.2238",
+                "longitude": "9.1217"
+              },
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://laruotadelsamsara.com/trestiempos_cagliari.jpeg",
+                "caption": "Sala yoga Tres Tiempos Cagliari"
+              },
+              "hasMap": "https://maps.app.goo.gl/HYFNzETn31Gtde359",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Monday",
+                  "opens": "16:00",
+                  "closes": "18:00",
+                  "description": "Lezione serale Ashtanga Yoga"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Tuesday",
+                  "opens": "17:15",
+                  "closes": "18:00",
+                  "description": "Lezione serale Ashtanga Yoga"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Wednesday",
+                  "opens": "09:00",
+                  "closes": "11:00",
+                  "description": "Lezione mattutina Mysore"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Wednesday",
+                  "opens": "18:00",
+                  "closes": "19:30",
+                  "description": "Lezione serale Ashtanga Yoga"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Thursday",
+                  "opens": "17:15",
+                  "closes": "18:00",
+                  "description": "Lezione serale Ashtanga Yoga"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Friday",
+                  "opens": "09:00",
+                  "closes": "11:00",
+                  "description": "Lezione mattutina Mysore"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Friday",
+                  "opens": "16:00",
+                  "closes": "18:00",
+                  "description": "Lezione serale Ashtanga Yoga"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Place",
+              "@id": "https://laruotadelsamsara.com/orarielezioni#dolianova",
+              "name": "WolfGym - Dolianova",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Corso Repubblica, 272",
+                "addressLocality": "Dolianova",
+                "addressRegion": "CA",
+                "postalCode": "09041",
+                "addressCountry": "IT"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "39.3856",
+                "longitude": "9.1850"
+              },
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://laruotadelsamsara.com/dolianova.jpg",
+                "caption": "Sala yoga WolfGym Dolianova"
+              },
+              "hasMap": "https://maps.app.goo.gl/FhP8UmPCy7CjDnU77",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Monday",
+                  "opens": "09:00",
+                  "closes": "10:00",
+                  "description": "Lezione mattutina Ashtanga Yoga"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Monday",
+                  "opens": "19:30",
+                  "closes": "20:30",
+                  "description": "Lezione serale Ashtanga Yoga"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Friday",
+                  "opens": "09:00",
+                  "closes": "10:00",
+                  "description": "Lezione mattutina Ashtanga Yoga"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Friday",
+                  "opens": "19:30",
+                  "closes": "20:30",
+                  "description": "Lezione serale Ashtanga Yoga"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Sedi delle lezioni di Yoga",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://laruotadelsamsara.com/orarielezioni#cagliari",
+            "name": "Uno, Dos, Tres Tiempos - Cagliari"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://laruotadelsamsara.com/orarielezioni#dolianova",
+            "name": "WolfGym - Dolianova"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "url": "https://laruotadelsamsara.com/contattami",
+      "availableLanguage": ["it", "en"],
+      "areaServed": "IT"
+    }
+  ]
+}
+
+</script>
